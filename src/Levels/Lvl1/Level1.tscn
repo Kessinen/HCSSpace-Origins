@@ -1,6 +1,31 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Levels/Lvl1/Level1.gd" type="Script" id=2]
 
-[node name="Level1" type="Node"]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 300 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 511.259 )
+
+[node name="Level1" type="StaticBody2D"]
+collision_mask = 0
 script = ExtResource( 2 )
+
+[node name="CollisionLeft" type="CollisionShape2D" parent="."]
+position = Vector2( -10, 300 )
+shape = SubResource( 1 )
+
+[node name="CollisionTop" type="CollisionShape2D" parent="."]
+position = Vector2( 513, 610 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="CollisionRight" type="CollisionShape2D" parent="."]
+position = Vector2( 1035, 300 )
+shape = SubResource( 1 )
+
+[node name="CollisionBottom" type="CollisionShape2D" parent="."]
+position = Vector2( 513, -10 )
+rotation = 1.5708
+shape = SubResource( 2 )
