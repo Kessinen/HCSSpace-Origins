@@ -11,6 +11,8 @@ var Score : int = 0
 
 var velocity = Vector2.ZERO
 
+onready var plBullet1 = preload("res://Bullets/Player/Bullet1.tscn")
+
 func _ready():
 	pass # Replace with function body.
 
@@ -27,3 +29,18 @@ func _physics_process(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, Acceleration)
 		
 	move_and_slide(velocity)
+	
+func _unhandled_key_input(event):
+	
+	if event.is_action_pressed("shoot"):
+		print("unhandlet")
+		fireGuns()
+
+func fireGuns():
+	var bullet = plBullet1.instance()
+	bullet.position = $Gun.global_position
+	get_parent().add_child(bullet)
+	
+
+func takeDamage(amount : int):
+	pass
