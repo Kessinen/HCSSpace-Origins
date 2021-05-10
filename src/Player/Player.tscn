@@ -19,3 +19,6 @@ shape = SubResource( 1 )
 
 [node name="Gun" type="Position2D" parent="."]
 position = Vector2( 0, -28.5905 )
+
+[node name="rofTimer" type="Timer" parent="."]
+one_shot = true
