@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Area2D
 
 export var bulletDamage : int = 1
 export var bulletSpeed : int = 200
