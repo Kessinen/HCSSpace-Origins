@@ -18,7 +18,7 @@ func _physics_process(delta):
 
 func moveTowardsPlayer():
 	var moveDirection = attractTarget.global_position - global_position
-	move_and_slide(moveDirection)
+	moveDirection = move_and_slide(moveDirection)
 
 func _on_Magnet_body_entered(body):
 	if body.name == "Player":

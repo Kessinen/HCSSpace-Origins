@@ -10,14 +10,10 @@ func _ready():
 	$sprite.rotation_degrees = rand_range(0,360)
 
 func _physics_process(delta):
-	
 	$sprite.rotate((float(RotationSpeed) / 10) * delta)
 	position.y = position.y + Speed * delta
-	
-	
 
 func die():
-
 	for i in range(enemyLevel * 2):
 		spawnChild()
 	queue_free()
@@ -25,10 +21,7 @@ func die():
 func spawnChild():
 	var enemy = plAsteroid.instance()
 	enemy.position = global_position
-	
 	get_parent().add_child(enemy)
-	pass
-
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
