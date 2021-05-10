@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="HCSpace Origins"
-run/main_scene="res://Levels/Lvl1/Level1.tscn"
+run/main_scene="res://Menus/Mainmenu.tscn"
 config/icon="res://icon.png"
 
 [display]

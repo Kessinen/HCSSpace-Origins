@@ -1,6 +1,58 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Menus/Mainmenu.gd" type="Script" id=1]
 
 [node name="Mainmenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+margin_left = 512.0
+margin_top = 300.0
+margin_right = 512.0
+margin_bottom = 300.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
+margin_right = 82.0
+margin_bottom = 31.0
+text = "HCSpace
+Origins"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/Panel/VBoxContainer"]
+margin_top = 35.0
+margin_right = 82.0
+margin_bottom = 39.0
+
+[node name="btnNewGame" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+margin_top = 43.0
+margin_right = 82.0
+margin_bottom = 63.0
+text = "New Game"
+
+[node name="btnQuit" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+margin_top = 67.0
+margin_right = 82.0
+margin_bottom = 87.0
+text = "Quit"
+
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/btnNewGame" to="." method="_on_btnNewGame_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/btnQuit" to="." method="_on_btnQuit_pressed"]
