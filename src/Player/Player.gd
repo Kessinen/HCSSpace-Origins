@@ -28,7 +28,7 @@ func _physics_process(delta):
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, Acceleration)
 		
-	move_and_slide(velocity)
+	velocity = move_and_slide(velocity)
 	
 func _unhandled_key_input(event):
 	
