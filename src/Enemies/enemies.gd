@@ -6,10 +6,15 @@ export var Loot : int = 0
 export var Speed : int = 0
 
 func takeDamage(amount):
+	if amount > Shields:
+		amount -= Shields
+		Shields = 0
+	else:
+		Shields -= amount
+		amount = 0
 	HP -= amount
 	if HP <= 0:
 		die()
-	print("Damage taken ", amount, " HP left ", HP)
 
 func die():
 	queue_free()
