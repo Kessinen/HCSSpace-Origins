@@ -31,9 +31,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 	
 func _unhandled_key_input(event):
-	
 	if event.is_action_pressed("shoot"):
-		print("unhandlet")
 		fireGuns()
 
 func fireGuns():
