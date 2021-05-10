@@ -1,6 +1,11 @@
 extends Area2D
 
-export var bulletDamage : int = 1
+onready var playerStats = get_node("/root/playerStats")
+
+export var bulletDamage : int
 export var bulletSpeed : int = 200
 export var playerBullet : bool = true
 
+
+func _ready():
+	bulletDamage = playerStats.shipDamage
