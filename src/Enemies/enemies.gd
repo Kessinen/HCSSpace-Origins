@@ -5,6 +5,7 @@ export var Shields : int = 0
 export var Loot : int = 0
 export var Speed : int = 30
 export var enemyLevel : int = 1
+export var damageAmount : int = 1
 
 var HP = HPBase * enemyLevel
 

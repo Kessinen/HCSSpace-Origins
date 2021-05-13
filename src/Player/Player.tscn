@@ -1,10 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/player.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 25.6584, 19.4368 )
+extents = Vector2( 30.3297, 21.5013 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 33.6933, 24.8649 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 23.1867
@@ -20,6 +23,13 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource( 3 )
+
 [node name="Gun" type="Position2D" parent="."]
 position = Vector2( 0, -28.5905 )
 
@@ -33,4 +43,5 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Magnet"]
 shape = SubResource( 2 )
 
+[connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
 [connection signal="body_entered" from="Magnet" to="." method="_on_Magnet_body_entered"]

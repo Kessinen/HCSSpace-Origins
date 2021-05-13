@@ -4,10 +4,16 @@ export var Name : String = "Player1"
 
 var Score : int = 0
 onready var playerStats = get_node("/root/playerStats")
+
+var curHP : int
 var velocity = Vector2.ZERO
 onready var plBullet1 = preload("res://Bullets/Player/Bullet1.tscn")
 
 signal lootChanged(newValue)
+signal hpChanged(newValue)
+
+func _ready():
+	curHP = playerStats.shipHP
 
 func _physics_process(delta):
 	
@@ -38,7 +44,12 @@ func fireGuns():
 		rofTimer.start()
 
 func takeDamage(amount : int):
-	pass
+	curHP -= amount
+	if curHP < 0: 
+		curHP = 0
+	emit_signal("hpChanged", curHP)
+	if curHP <= 0:
+		die()
 
 func die():
 	Score = 0
@@ -52,3 +63,7 @@ func _on_Magnet_body_entered(body):
 
 func _exit_tree():
 	playerStats.lootAmount += Score
+
+func _on_Hitbox_body_entered(body):
+	if body.is_in_group("Enemies"):
+		takeDamage(body.damageAmount)
