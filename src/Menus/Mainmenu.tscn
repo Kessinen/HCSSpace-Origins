@@ -76,14 +76,15 @@ size_flags_vertical = 3
 text = "Quit"
 
 [node name="lblVersion" type="Label" parent="."]
-margin_left = 411.0
-margin_top = 586.0
-margin_right = 1024.0
-margin_bottom = 600.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -10.0
+margin_bottom = -10.0
 size_flags_horizontal = 3
 size_flags_vertical = 0
 text = "Version: "
 align = 2
+valign = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
