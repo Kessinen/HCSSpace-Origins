@@ -7,7 +7,7 @@ var saveFileName : String = "user://save.dat"
 
 func saveGameData():
 	
-	playerStats["version"] = ProjectSettings.get_setting("application/config/version")
+	playerStats.playerData["version"] = ProjectSettings.get_setting("application/config/version")
 	var retval = saveFile.open(saveFileName, File.WRITE)
 	if retval == OK:
 		saveFile.store_var(playerStats.playerData)
