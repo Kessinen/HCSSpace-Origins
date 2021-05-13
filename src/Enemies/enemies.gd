@@ -8,6 +8,8 @@ export var enemyLevel : int = 1
 
 var HP = HPBase * enemyLevel
 
+var plLoot = preload("res://Loot/Loot.tscn")
+
 func takeDamage(amount):
 	if amount > Shields:
 		amount -= Shields
@@ -19,5 +21,14 @@ func takeDamage(amount):
 	if HP <= 0:
 		die()
 
+func spawnLoot():
+	var loot = plLoot.instance()
+	loot.lootValue = enemyLevel * 10
+	loot.position = global_position
+	loot.position.x = clamp(loot.position.x,10,get_viewport().size.x-10)
+	loot.position.y = clamp(loot.position.y,10,get_viewport().size.y-10)
+	get_parent().add_child(loot)
+
 func die():
+	spawnLoot()
 	queue_free()
