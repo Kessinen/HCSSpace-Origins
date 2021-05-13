@@ -13,10 +13,13 @@ config_version=4
 config/name="HCSpace Origins"
 run/main_scene="res://Menus/Mainmenu.tscn"
 config/icon="res://icon.png"
-config/version=""
+config=""
+config/version="v0.2_alpha-2-g15a003e"
+
 [autoload]
 
 playerStats="*res://Globals/playerStats.gd"
+GameFunctions="*res://Globals/gameFunctions.gd"
 
 [display]
 

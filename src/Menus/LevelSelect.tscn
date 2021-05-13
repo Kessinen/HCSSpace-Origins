@@ -476,7 +476,6 @@ margin_bottom = 40.0
 margin_right = 80.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 80, 40 )
-disabled = true
 text = "Save"
 
 [node name="btnLaunch" type="Button" parent="VBoxContainer/HBoxContainer2/HBoxContainer"]
@@ -498,4 +497,5 @@ text = "Launch"
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/levelsGrid/Lvl7" to="." method="_on_LvlSelected_pressed" binds= [ 7 ]]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/levelsGrid/Lvl8" to="." method="_on_LvlSelected_pressed" binds= [ 8 ]]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/levelsGrid/Lvl9" to="." method="_on_LvlSelected_pressed" binds= [ 9 ]]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/HBoxContainer/btnSaveGame" to="." method="_on_btnSaveGame_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/HBoxContainer/btnLaunch" to="." method="_on_btnLaunch_pressed"]

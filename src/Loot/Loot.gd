@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-onready var playerStats = get_node("/root/playerStats")
+onready var playerStats = get_node("/root/playerStats").playerData
 
 export var lootSpeed : int = 20
 export var lootValue : int = 1
@@ -8,7 +8,7 @@ export var lootValue : int = 1
 var attractTarget
 
 func _ready():
-	$Magnet/CollisionShape2D.shape.radius = playerStats.shipMagnet * 20
+	$Magnet/CollisionShape2D.shape.radius = playerStats["shipMagnet"] * 20
 
 func _physics_process(delta):
 	if attractTarget != null:

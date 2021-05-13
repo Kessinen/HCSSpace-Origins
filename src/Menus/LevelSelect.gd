@@ -1,6 +1,7 @@
 extends Control
 
-onready var playerStats = get_node("/root/playerStats")
+onready var playerStats = get_node("/root/playerStats").playerData
+onready var gameFunctions = get_node("/root/GameFunctions")
 
 var selectedLevel : int = 0
 
@@ -19,17 +20,17 @@ func _ready():
 	
 
 func updateGui():
-	for i in range(0, playerStats.highestLevel):
+	for i in range(0, playerStats["highestLevel"]):
 		get_node("VBoxContainer/HBoxContainer/VBoxContainer2/levelsGrid/Lvl"+str(i+1)).disabled = false
 		
-	$VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer4/lblCash.text = "Cash: " + str(playerStats.lootAmount) + " $"
+	$VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer4/lblCash.text = "Cash: " + str(playerStats["lootAmount"]) + " $"
 	
-	$VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer/HBoxContainer/pbarHP.value = playerStats.shipHP
-	$VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer7/HBoxContainer/pbarSpeed.value = playerStats.shipSpeed
-	$VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/pbarHandling.value = playerStats.shipHandling
-	$VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer3/HBoxContainer/pbarRof.value = playerStats.shipRoF
-	$VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer5/HBoxContainer/pbarDamage.value = playerStats.shipDamage
-	$VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer6/HBoxContainer/pbarMagnet.value = playerStats.shipMagnet
+	$VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer/HBoxContainer/pbarHP.value = playerStats["shipHP"]
+	$VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer7/HBoxContainer/pbarSpeed.value = playerStats["shipSpeed"]
+	$VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer/pbarHandling.value = playerStats["shipHandling"]
+	$VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer3/HBoxContainer/pbarRof.value = playerStats["shipRoF"]
+	$VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer5/HBoxContainer/pbarDamage.value = playerStats["shipDamage"]
+	$VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer6/HBoxContainer/pbarMagnet.value = playerStats["shipMagnet"]
 
 func _on_LvlSelected_pressed(extra_arg_0):
 	selectedLevel = extra_arg_0
@@ -40,3 +41,5 @@ func _on_LvlSelected_pressed(extra_arg_0):
 func _on_btnLaunch_pressed():
 	get_tree().change_scene("res://Levels/Lvl"+str(selectedLevel)+"/Level"+str(selectedLevel)+".tscn")
 
+func _on_btnSaveGame_pressed():
+	gameFunctions.saveGameData()
