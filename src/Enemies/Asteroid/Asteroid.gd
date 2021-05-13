@@ -21,7 +21,7 @@ func die():
 func spawnChild():
 	var enemy = plAsteroid.instance()
 	enemy.position = global_position
-	get_parent().add_child(enemy)
+	get_parent().call_deferred("add_child", enemy)
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()

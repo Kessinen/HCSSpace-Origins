@@ -27,7 +27,7 @@ func spawnLoot():
 	loot.position = global_position
 	loot.position.x = clamp(loot.position.x,10,get_viewport().size.x-10)
 	loot.position.y = clamp(loot.position.y,10,get_viewport().size.y-10)
-	get_parent().add_child(loot)
+	get_parent().call_deferred("add_child",loot)
 
 func die():
 	spawnLoot()
