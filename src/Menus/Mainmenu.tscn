@@ -48,22 +48,34 @@ margin_bottom = 39.0
 [node name="btnNewGame" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
 margin_top = 43.0
 margin_right = 200.0
-margin_bottom = 63.0
+margin_bottom = 79.0
+size_flags_vertical = 3
 text = "New Game"
 
-[node name="btnOptions" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
-margin_top = 67.0
+[node name="btnContinue" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+margin_top = 83.0
 margin_right = 200.0
-margin_bottom = 87.0
+margin_bottom = 119.0
+size_flags_vertical = 3
+disabled = true
+text = "Continue"
+
+[node name="btnOptions" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+margin_top = 123.0
+margin_right = 200.0
+margin_bottom = 159.0
+size_flags_vertical = 3
 disabled = true
 text = "Options"
 
 [node name="btnQuit" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
-margin_top = 91.0
+margin_top = 163.0
 margin_right = 200.0
-margin_bottom = 111.0
+margin_bottom = 200.0
+size_flags_vertical = 3
 text = "Quit"
 
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/btnNewGame" to="." method="_on_btnNewGame_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/btnContinue" to="." method="_on_btnNewGame_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/btnOptions" to="." method="_on_btnNewGame_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/btnQuit" to="." method="_on_btnQuit_pressed"]
