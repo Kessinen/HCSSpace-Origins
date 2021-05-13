@@ -23,3 +23,7 @@ func moveTowardsPlayer():
 func _on_Magnet_body_entered(body):
 	if body.name == "Player":
 		attractTarget = body
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()
