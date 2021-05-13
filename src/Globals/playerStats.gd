@@ -8,3 +8,5 @@ var shipDamage : int = 10
 var shipHandling : int = 10
 var shipMagnet : int = 10
 var shipSpeed : int = 10
+
+var highestLevel : int = 1
