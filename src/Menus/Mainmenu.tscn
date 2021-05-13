@@ -17,42 +17,53 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="CenterContainer"]
-margin_left = 512.0
-margin_top = 300.0
-margin_right = 512.0
-margin_bottom = 300.0
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+margin_left = 405.0
+margin_top = 193.0
+margin_right = 619.0
+margin_bottom = 407.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 207.0
+margin_bottom = 207.0
+rect_min_size = Vector2( 200, 200 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
-margin_right = 82.0
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+margin_right = 200.0
 margin_bottom = 31.0
 text = "HCSpace
 Origins"
 align = 1
 
-[node name="HSeparator" type="HSeparator" parent="CenterContainer/Panel/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/VBoxContainer"]
 margin_top = 35.0
-margin_right = 82.0
+margin_right = 200.0
 margin_bottom = 39.0
 
-[node name="btnNewGame" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+[node name="btnNewGame" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
 margin_top = 43.0
-margin_right = 82.0
+margin_right = 200.0
 margin_bottom = 63.0
 text = "New Game"
 
-[node name="btnQuit" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+[node name="btnOptions" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
 margin_top = 67.0
-margin_right = 82.0
+margin_right = 200.0
 margin_bottom = 87.0
+disabled = true
+text = "Options"
+
+[node name="btnQuit" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+margin_top = 91.0
+margin_right = 200.0
+margin_bottom = 111.0
 text = "Quit"
 
-[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/btnNewGame" to="." method="_on_btnNewGame_pressed"]
-[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/btnQuit" to="." method="_on_btnQuit_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/btnNewGame" to="." method="_on_btnNewGame_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/btnOptions" to="." method="_on_btnNewGame_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/btnQuit" to="." method="_on_btnQuit_pressed"]
