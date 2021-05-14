@@ -8,9 +8,11 @@ onready var playerStats = get_node("/root/playerStats").playerData
 var curHP : int
 var velocity = Vector2.ZERO
 onready var plBullet1 = preload("res://Bullets/Player/Bullet1.tscn")
+onready var plDied = preload("res://GUI/stageLost.tscn")
 
 signal lootChanged(newValue)
 signal hpChanged(newValue)
+signal IDied()
 
 func _ready():
 	curHP = playerStats["shipHP"]
@@ -53,6 +55,7 @@ func takeDamage(amount : int):
 
 func die():
 	Score = 0
+	emit_signal("IDied")
 	queue_free()
 
 func _on_Magnet_body_entered(body):
