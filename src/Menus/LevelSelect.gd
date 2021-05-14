@@ -22,6 +22,7 @@ var descriptions = [
 func _ready():
 	updateGui()
 	updateShopButtons()
+	gameFunctions.saveGameData()
 
 func updateShopButtons():
 	var curCash : int = playerStats["lootAmount"]
@@ -39,7 +40,6 @@ func updateShopButtons():
 		pbarValue.value = playerStats["ship"+i]
 		if pbarValue.value == 1:
 			btnMin.disabled = true
-			print("Disabling: ", i)
 		else:
 			btnMin.disabled = false
 
