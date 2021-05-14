@@ -2,6 +2,7 @@
 from subprocess import run
 from configparser import ConfigParser
 from pathlib import Path
+from os import listdir, link
 
 def getLatestTag() -> str:
     gitTag = None
@@ -39,14 +40,27 @@ def writeProjectVersion(file):
     with open(file, 'w') as newproFile:
         newproFile.write(newFileContents)
 
-
 def generateBinaries():
     exports = ["linux", "win64"]
-
     for name in exports:
         cmd = f'godot --path src --export {name}'.split()
         run(cmd)
 
+def cleanOldFiles():
+    files = listdir("bin/")
+    for file in files:
+        file = Path("bin").joinpath(file)
+        Path.unlink(file)
+
+def makeLinks():
+    files = listdir("bin/")
+    for file in files:
+        expFilename = file.split('-')
+        newFileExt = file.split('.')[-1]
+        newFilename = f'{expFilename[0]}-{expFilename[1]}-latest.{newFileExt}'
+        oldfile = Path("bin").joinpath(file)
+        newFile = Path("bin").joinpath(newFilename)
+        link(oldfile,newFile)
 
 #Check if export file exists
 exportFile = Path("src/export_presets.cfg")
@@ -56,6 +70,9 @@ if not exportFile.exists() or not projectFile.exists():
     print("ERROR: Export config file not found!")
     exit(1)
 
-writeExport(exportFile)
-writeProjectVersion(projectFile)
-generateBinaries()
+if __name__ == "__main__":
+    writeExport(exportFile)
+    writeProjectVersion(projectFile)
+    cleanOldFiles()
+    generateBinaries()
+    makeLinks()
