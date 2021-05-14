@@ -58,4 +58,4 @@ if not exportFile.exists() or not projectFile.exists():
 
 writeExport(exportFile)
 writeProjectVersion(projectFile)
-#generateBinaries()
+generateBinaries()
