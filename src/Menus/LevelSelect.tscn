@@ -45,7 +45,7 @@ size_flags_horizontal = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_right = 497.0
-margin_bottom = 264.0
+margin_bottom = 290.0
 
 [node name="PanelContainer4" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
 margin_right = 497.0
@@ -58,30 +58,32 @@ margin_right = 490.0
 margin_bottom = 21.0
 text = "Cash: 0 $"
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
 margin_top = 32.0
 margin_right = 497.0
-margin_bottom = 36.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 0, 30 )
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 40.0
+[node name="HP" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 66.0
 margin_right = 497.0
-margin_bottom = 74.0
+margin_bottom = 100.0
 size_flags_horizontal = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/HP"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 490.0
 margin_bottom = 27.0
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="btnMin" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/HP/HBoxContainer"]
 margin_right = 20.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 20, 20 )
+disabled = true
 text = "-"
 
-[node name="pbarHP" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="pbarValue" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/HP/HBoxContainer"]
 margin_left = 24.0
 margin_right = 174.0
 margin_bottom = 20.0
@@ -94,14 +96,15 @@ step = 1.0
 value = 1.0
 percent_visible = false
 
-[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="btnPlus" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/HP/HBoxContainer"]
 margin_left = 178.0
 margin_right = 198.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 20, 20 )
+disabled = true
 text = "+"
 
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="lblTitle" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/HP/HBoxContainer"]
 margin_left = 202.0
 margin_top = 3.0
 margin_right = 483.0
@@ -109,25 +112,26 @@ margin_bottom = 17.0
 size_flags_horizontal = 3
 text = "HP"
 
-[node name="PanelContainer7" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 78.0
+[node name="Speed" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 104.0
 margin_right = 497.0
-margin_bottom = 112.0
+margin_bottom = 138.0
 size_flags_horizontal = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer7"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Speed"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 490.0
 margin_bottom = 27.0
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer7/HBoxContainer"]
+[node name="btnMin" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Speed/HBoxContainer"]
 margin_right = 20.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 20, 20 )
+disabled = true
 text = "-"
 
-[node name="pbarSpeed" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer7/HBoxContainer"]
+[node name="pbarValue" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Speed/HBoxContainer"]
 margin_left = 24.0
 margin_right = 174.0
 margin_bottom = 20.0
@@ -140,39 +144,41 @@ step = 1.0
 value = 1.0
 percent_visible = false
 
-[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer7/HBoxContainer"]
+[node name="btnPlus" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Speed/HBoxContainer"]
 margin_left = 178.0
 margin_right = 198.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 20, 20 )
+disabled = true
 text = "+"
 
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer7/HBoxContainer"]
+[node name="lblTitle" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Speed/HBoxContainer"]
 margin_left = 202.0
 margin_top = 3.0
 margin_right = 241.0
 margin_bottom = 17.0
 text = "Speed"
 
-[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 116.0
+[node name="Handling" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 142.0
 margin_right = 497.0
-margin_bottom = 150.0
+margin_bottom = 176.0
 size_flags_horizontal = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Handling"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 490.0
 margin_bottom = 27.0
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer"]
+[node name="btnMin" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Handling/HBoxContainer"]
 margin_right = 20.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 20, 20 )
+disabled = true
 text = "-"
 
-[node name="pbarHandling" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer"]
+[node name="pbarValue" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Handling/HBoxContainer"]
 margin_left = 24.0
 margin_right = 174.0
 margin_bottom = 20.0
@@ -185,39 +191,41 @@ step = 1.0
 value = 1.0
 percent_visible = false
 
-[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer"]
+[node name="btnPlus" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Handling/HBoxContainer"]
 margin_left = 178.0
 margin_right = 198.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 20, 20 )
+disabled = true
 text = "+"
 
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer2/HBoxContainer"]
+[node name="lblTitle" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Handling/HBoxContainer"]
 margin_left = 202.0
 margin_top = 3.0
 margin_right = 258.0
 margin_bottom = 17.0
 text = "Handling"
 
-[node name="PanelContainer3" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 154.0
+[node name="RoF" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 180.0
 margin_right = 497.0
-margin_bottom = 188.0
+margin_bottom = 214.0
 size_flags_horizontal = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer3"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/RoF"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 490.0
 margin_bottom = 27.0
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer3/HBoxContainer"]
+[node name="btnMin" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/RoF/HBoxContainer"]
 margin_right = 20.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 20, 20 )
+disabled = true
 text = "-"
 
-[node name="pbarRof" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer3/HBoxContainer"]
+[node name="pbarValue" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/RoF/HBoxContainer"]
 margin_left = 24.0
 margin_right = 174.0
 margin_bottom = 20.0
@@ -230,39 +238,41 @@ step = 1.0
 value = 1.0
 percent_visible = false
 
-[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer3/HBoxContainer"]
+[node name="btnPlus" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/RoF/HBoxContainer"]
 margin_left = 178.0
 margin_right = 198.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 20, 20 )
+disabled = true
 text = "+"
 
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer3/HBoxContainer"]
+[node name="lblTitle" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/RoF/HBoxContainer"]
 margin_left = 202.0
 margin_top = 3.0
 margin_right = 271.0
 margin_bottom = 17.0
 text = "Rate of fire"
 
-[node name="PanelContainer5" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 192.0
+[node name="Damage" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 218.0
 margin_right = 497.0
-margin_bottom = 226.0
+margin_bottom = 252.0
 size_flags_horizontal = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer5"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Damage"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 490.0
 margin_bottom = 27.0
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer5/HBoxContainer"]
+[node name="btnMin" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Damage/HBoxContainer"]
 margin_right = 20.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 20, 20 )
+disabled = true
 text = "-"
 
-[node name="pbarDamage" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer5/HBoxContainer"]
+[node name="pbarValue" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Damage/HBoxContainer"]
 margin_left = 24.0
 margin_right = 174.0
 margin_bottom = 20.0
@@ -275,39 +285,41 @@ step = 1.0
 value = 1.0
 percent_visible = false
 
-[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer5/HBoxContainer"]
+[node name="btnPlus" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Damage/HBoxContainer"]
 margin_left = 178.0
 margin_right = 198.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 20, 20 )
+disabled = true
 text = "+"
 
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer5/HBoxContainer"]
+[node name="lblTitle" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Damage/HBoxContainer"]
 margin_left = 202.0
 margin_top = 3.0
 margin_right = 254.0
 margin_bottom = 17.0
 text = "Damage"
 
-[node name="PanelContainer6" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 230.0
+[node name="Magnet" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 256.0
 margin_right = 497.0
-margin_bottom = 264.0
+margin_bottom = 290.0
 size_flags_horizontal = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer6"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Magnet"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 490.0
 margin_bottom = 27.0
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer6/HBoxContainer"]
+[node name="btnMin" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Magnet/HBoxContainer"]
 margin_right = 20.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 20, 20 )
+disabled = true
 text = "-"
 
-[node name="pbarMagnet" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer6/HBoxContainer"]
+[node name="pbarValue" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Magnet/HBoxContainer"]
 margin_left = 24.0
 margin_right = 174.0
 margin_bottom = 20.0
@@ -320,14 +332,15 @@ step = 1.0
 value = 1.0
 percent_visible = false
 
-[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer6/HBoxContainer"]
+[node name="btnPlus" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Magnet/HBoxContainer"]
 margin_left = 178.0
 margin_right = 198.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 20, 20 )
+disabled = true
 text = "+"
 
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer6/HBoxContainer"]
+[node name="lblTitle" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Magnet/HBoxContainer"]
 margin_left = 202.0
 margin_top = 3.0
 margin_right = 249.0

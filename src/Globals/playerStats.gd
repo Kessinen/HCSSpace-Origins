@@ -12,3 +12,24 @@ var playerData = {
 	"shipSpeed" : 1,
 	"highestLevel" :1
 }
+var upgradeCostMultiplier = {
+	"HP" : 1.5,
+	"Shields" : 1,
+	"RoF" : 1.2,
+	"Damage" : 2,
+	"Handling" : 1.2,
+	"Magnet" : 1.5,
+	"Speed" : 1.3,
+}
+var upgradeBasePrices = {
+	"HP" : 100,
+	"Shields" : 1,
+	"RoF" : 110,
+	"Damage" : 200,
+	"Handling" : 120,
+	"Magnet" : 150,
+	"Speed" : 130,
+}
+
+
+
