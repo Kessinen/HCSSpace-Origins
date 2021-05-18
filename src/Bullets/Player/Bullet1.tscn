@@ -11,12 +11,13 @@ height = 3.82529
 collision_layer = 8
 collision_mask = 4
 script = ExtResource( 1 )
+bulletSpeed = 400
 
 [node name="bullet1" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
