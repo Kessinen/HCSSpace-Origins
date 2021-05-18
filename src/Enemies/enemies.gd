@@ -1,13 +1,13 @@
 extends KinematicBody2D
 
-export var HPBase : int = 3
-export var Shields : int = 0
-export var Loot : int = 0
-export var Speed : int = 30
-export var enemyLevel : int = 1
-export var damageAmount : int = 1
+export (int) var HPBase : int = 3
+export (int) var Shields : int = 0
+export (int) var Loot : int = 0
+export (int) var Speed : int = 30
+export (int) var enemyLevel : int = 1
+export (int) var damageAmount : int = 1
 
-var HP = HPBase * enemyLevel
+onready var HP = HPBase * enemyLevel
 
 var plLoot = preload("res://Loot/Loot.tscn")
 
