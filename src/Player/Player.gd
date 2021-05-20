@@ -3,6 +3,8 @@ extends KinematicBody2D
 export var Name : String = "Player1"
 
 var Score : int = 0
+onready var origEngineLifetime : float = $Engines/left.lifetime
+onready var origEngineVelocity : float =  $Engines/left.process_material.get("initial_velocity")
 onready var playerStats = get_node("/root/playerStats").playerData
 
 var curHP : int
@@ -17,6 +19,7 @@ signal IDied()
 func _ready():
 	curHP = playerStats["shipHP"]
 
+
 func _physics_process(delta):
 	
 	moveShip()
@@ -25,7 +28,9 @@ func _physics_process(delta):
 		fireGuns()
 
 func moveShip():
+	
 	var input_vector : Vector2
+	var accelerate := int(Input.get_action_strength("move_down") - Input.get_action_strength("move_up"))
 	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	input_vector = input_vector.normalized()
@@ -34,6 +39,26 @@ func moveShip():
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, playerStats["shipHandling"])
 	velocity = move_and_slide(velocity)
+	
+	#Engine exhaust power
+	var engines = $Engines.get_children()
+	#var tme = $Engines/left
+	var exhaustLifeTime : float
+	var exhaustVelocity : float
+	for engine in engines:
+		match accelerate:
+			-1:
+				exhaustLifeTime = origEngineLifetime * 0.8
+				exhaustVelocity = origEngineVelocity * 2
+			0:
+				exhaustLifeTime = origEngineLifetime
+				exhaustVelocity = origEngineVelocity
+			1:
+				exhaustLifeTime = origEngineLifetime * 1
+				exhaustVelocity = origEngineVelocity * 0.5
+		engine.lifetime = exhaustLifeTime
+		engine.process_material.set("initial_velocity", exhaustVelocity)
+
 
 func fireGuns():
 	var rofTimer = $rofTimer
