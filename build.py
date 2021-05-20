@@ -52,15 +52,22 @@ def cleanOldFiles():
         file = Path("bin").joinpath(file)
         Path.unlink(file)
 
-def makeLinks():
+def makeCompressed():
     files = listdir("bin/")
     for file in files:
         expFilename = file.split('-')
         newFileExt = file.split('.')[-1]
-        newFilename = f'{expFilename[0]}-{expFilename[1]}-latest.{newFileExt}'
+        newFileStem = f'{expFilename[0]}-{expFilename[1]}-latest'
+        newFilename = f'{newFileStem}.{newFileExt}'
         oldfile = Path("bin").joinpath(file)
-        newFile = Path("bin").joinpath(newFilename)
-        link(oldfile,newFile)
+        if newFileExt == "exe":
+            run(f'zip bin/{newFileStem}.zip {oldfile}'.split(" "))
+        else:
+            run(f'tar cjf bin/{newFileStem}.tar.bz2 {oldfile}'.split(" "))
+        
+        #newFile = Path("bin").joinpath(newFilename)
+
+        #link(oldfile,newFile)
 
 #Check if export file exists
 exportFile = Path("src/export_presets.cfg")
@@ -75,4 +82,4 @@ if __name__ == "__main__":
     writeProjectVersion(projectFile)
     cleanOldFiles()
     generateBinaries()
-    makeLinks()
+    makeCompressed()
