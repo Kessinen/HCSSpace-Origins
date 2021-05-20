@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Menus/Mainmenu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/SF Atarian System.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Fonts/BasicFont.tres" type="DynamicFont" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 2 )
 
 [node name="Mainmenu" type="Control"]
 anchor_right = 1.0
@@ -18,6 +24,7 @@ margin_right = -10.0
 margin_bottom = -8.58582
 size_flags_horizontal = 3
 size_flags_vertical = 0
+custom_fonts/font = ExtResource( 3 )
 text = "Version: "
 align = 2
 valign = 2
@@ -33,61 +40,76 @@ __meta__ = {
 }
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
-margin_left = 405.0
-margin_top = 193.0
-margin_right = 619.0
-margin_bottom = 407.0
+margin_left = 387.0
+margin_top = 140.0
+margin_right = 637.0
+margin_bottom = 460.0
+rect_min_size = Vector2( 250, 320 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 207.0
-margin_bottom = 207.0
+margin_right = 243.0
+margin_bottom = 313.0
 rect_min_size = Vector2( 200, 200 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="MarginContainer2" type="MarginContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+margin_right = 236.0
+margin_bottom = 10.0
+rect_min_size = Vector2( 0, 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
-margin_right = 200.0
-margin_bottom = 31.0
-text = "HCSpace
-Origins"
+margin_top = 14.0
+margin_right = 236.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 1 )
+text = "HCSpace: Origins"
 align = 1
 
-[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/VBoxContainer"]
-margin_top = 35.0
-margin_right = 200.0
-margin_bottom = 39.0
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+margin_top = 44.0
+margin_right = 236.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 0, 20 )
 
 [node name="btnNewGame" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
-margin_top = 43.0
-margin_right = 200.0
-margin_bottom = 79.0
+margin_top = 68.0
+margin_right = 236.0
+margin_bottom = 124.0
 size_flags_vertical = 3
+custom_fonts/font = ExtResource( 3 )
 text = "New Game"
 
 [node name="btnContinue" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
-margin_top = 83.0
-margin_right = 200.0
-margin_bottom = 119.0
+margin_top = 128.0
+margin_right = 236.0
+margin_bottom = 185.0
 size_flags_vertical = 3
+custom_fonts/font = ExtResource( 3 )
 disabled = true
 text = "Continue"
 
 [node name="btnOptions" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
-margin_top = 123.0
-margin_right = 200.0
-margin_bottom = 159.0
+margin_top = 189.0
+margin_right = 236.0
+margin_bottom = 245.0
 size_flags_vertical = 3
+custom_fonts/font = ExtResource( 3 )
 disabled = true
 text = "Options"
 
 [node name="btnQuit" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
-margin_top = 163.0
-margin_right = 200.0
-margin_bottom = 200.0
+margin_top = 249.0
+margin_right = 236.0
+margin_bottom = 306.0
 size_flags_vertical = 3
+custom_fonts/font = ExtResource( 3 )
 text = "Quit"
 
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/btnNewGame" to="." method="_on_btnNewGame_pressed"]

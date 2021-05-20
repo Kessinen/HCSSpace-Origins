@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Menus/LevelSelect.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/BasicFont.tres" type="DynamicFont" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.74902, 0.00784314, 0.00784314, 1 )
@@ -45,40 +46,41 @@ size_flags_horizontal = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_right = 497.0
-margin_bottom = 290.0
+margin_bottom = 303.0
 
 [node name="PanelContainer4" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
 margin_right = 497.0
-margin_bottom = 28.0
+margin_bottom = 35.0
 
 [node name="lblCash" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer4"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 490.0
-margin_bottom = 21.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 2 )
 text = "Cash: 0 $"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 32.0
+margin_top = 39.0
 margin_right = 497.0
-margin_bottom = 62.0
+margin_bottom = 69.0
 rect_min_size = Vector2( 0, 30 )
 
 [node name="HP" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 66.0
+margin_top = 73.0
 margin_right = 497.0
-margin_bottom = 100.0
+margin_bottom = 108.0
 size_flags_horizontal = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/HP"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 490.0
-margin_bottom = 27.0
+margin_bottom = 28.0
 
 [node name="btnMin" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/HP/HBoxContainer"]
 margin_right = 20.0
-margin_bottom = 20.0
+margin_bottom = 21.0
 rect_min_size = Vector2( 20, 20 )
 disabled = true
 text = "-"
@@ -99,34 +101,34 @@ percent_visible = false
 [node name="btnPlus" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/HP/HBoxContainer"]
 margin_left = 178.0
 margin_right = 198.0
-margin_bottom = 20.0
+margin_bottom = 21.0
 rect_min_size = Vector2( 20, 20 )
 disabled = true
 text = "+"
 
 [node name="lblTitle" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/HP/HBoxContainer"]
 margin_left = 202.0
-margin_top = 3.0
 margin_right = 483.0
-margin_bottom = 17.0
+margin_bottom = 21.0
 size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
 text = "HP"
 
 [node name="Speed" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 104.0
+margin_top = 112.0
 margin_right = 497.0
-margin_bottom = 138.0
+margin_bottom = 147.0
 size_flags_horizontal = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Speed"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 490.0
-margin_bottom = 27.0
+margin_bottom = 28.0
 
 [node name="btnMin" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Speed/HBoxContainer"]
 margin_right = 20.0
-margin_bottom = 20.0
+margin_bottom = 21.0
 rect_min_size = Vector2( 20, 20 )
 disabled = true
 text = "-"
@@ -147,33 +149,33 @@ percent_visible = false
 [node name="btnPlus" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Speed/HBoxContainer"]
 margin_left = 178.0
 margin_right = 198.0
-margin_bottom = 20.0
+margin_bottom = 21.0
 rect_min_size = Vector2( 20, 20 )
 disabled = true
 text = "+"
 
 [node name="lblTitle" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Speed/HBoxContainer"]
 margin_left = 202.0
-margin_top = 3.0
-margin_right = 241.0
-margin_bottom = 17.0
+margin_right = 240.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 2 )
 text = "Speed"
 
 [node name="Handling" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 142.0
+margin_top = 151.0
 margin_right = 497.0
-margin_bottom = 176.0
+margin_bottom = 186.0
 size_flags_horizontal = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Handling"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 490.0
-margin_bottom = 27.0
+margin_bottom = 28.0
 
 [node name="btnMin" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Handling/HBoxContainer"]
 margin_right = 20.0
-margin_bottom = 20.0
+margin_bottom = 21.0
 rect_min_size = Vector2( 20, 20 )
 disabled = true
 text = "-"
@@ -194,33 +196,33 @@ percent_visible = false
 [node name="btnPlus" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Handling/HBoxContainer"]
 margin_left = 178.0
 margin_right = 198.0
-margin_bottom = 20.0
+margin_bottom = 21.0
 rect_min_size = Vector2( 20, 20 )
 disabled = true
 text = "+"
 
 [node name="lblTitle" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Handling/HBoxContainer"]
 margin_left = 202.0
-margin_top = 3.0
-margin_right = 258.0
-margin_bottom = 17.0
+margin_right = 259.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 2 )
 text = "Handling"
 
 [node name="RoF" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 180.0
+margin_top = 190.0
 margin_right = 497.0
-margin_bottom = 214.0
+margin_bottom = 225.0
 size_flags_horizontal = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/RoF"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 490.0
-margin_bottom = 27.0
+margin_bottom = 28.0
 
 [node name="btnMin" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/RoF/HBoxContainer"]
 margin_right = 20.0
-margin_bottom = 20.0
+margin_bottom = 21.0
 rect_min_size = Vector2( 20, 20 )
 disabled = true
 text = "-"
@@ -241,33 +243,33 @@ percent_visible = false
 [node name="btnPlus" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/RoF/HBoxContainer"]
 margin_left = 178.0
 margin_right = 198.0
-margin_bottom = 20.0
+margin_bottom = 21.0
 rect_min_size = Vector2( 20, 20 )
 disabled = true
 text = "+"
 
 [node name="lblTitle" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/RoF/HBoxContainer"]
 margin_left = 202.0
-margin_top = 3.0
-margin_right = 271.0
-margin_bottom = 17.0
+margin_right = 278.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 2 )
 text = "Rate of fire"
 
 [node name="Damage" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 218.0
+margin_top = 229.0
 margin_right = 497.0
-margin_bottom = 252.0
+margin_bottom = 264.0
 size_flags_horizontal = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Damage"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 490.0
-margin_bottom = 27.0
+margin_bottom = 28.0
 
 [node name="btnMin" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Damage/HBoxContainer"]
 margin_right = 20.0
-margin_bottom = 20.0
+margin_bottom = 21.0
 rect_min_size = Vector2( 20, 20 )
 disabled = true
 text = "-"
@@ -288,33 +290,33 @@ percent_visible = false
 [node name="btnPlus" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Damage/HBoxContainer"]
 margin_left = 178.0
 margin_right = 198.0
-margin_bottom = 20.0
+margin_bottom = 21.0
 rect_min_size = Vector2( 20, 20 )
 disabled = true
 text = "+"
 
 [node name="lblTitle" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Damage/HBoxContainer"]
 margin_left = 202.0
-margin_top = 3.0
-margin_right = 254.0
-margin_bottom = 17.0
+margin_right = 251.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 2 )
 text = "Damage"
 
 [node name="Magnet" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 256.0
+margin_top = 268.0
 margin_right = 497.0
-margin_bottom = 290.0
+margin_bottom = 303.0
 size_flags_horizontal = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Magnet"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 490.0
-margin_bottom = 27.0
+margin_bottom = 28.0
 
 [node name="btnMin" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Magnet/HBoxContainer"]
 margin_right = 20.0
-margin_bottom = 20.0
+margin_bottom = 21.0
 rect_min_size = Vector2( 20, 20 )
 disabled = true
 text = "-"
@@ -335,16 +337,16 @@ percent_visible = false
 [node name="btnPlus" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Magnet/HBoxContainer"]
 margin_left = 178.0
 margin_right = 198.0
-margin_bottom = 20.0
+margin_bottom = 21.0
 rect_min_size = Vector2( 20, 20 )
 disabled = true
 text = "+"
 
 [node name="lblTitle" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Magnet/HBoxContainer"]
 margin_left = 202.0
-margin_top = 3.0
-margin_right = 249.0
-margin_bottom = 17.0
+margin_right = 251.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 2 )
 text = "Magnet"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
@@ -368,6 +370,7 @@ margin_right = 152.0
 margin_bottom = 75.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
 disabled = true
 text = "1"
 
@@ -377,6 +380,7 @@ margin_right = 324.0
 margin_bottom = 75.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
 disabled = true
 text = "2"
 
@@ -386,6 +390,7 @@ margin_right = 496.0
 margin_bottom = 75.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
 disabled = true
 text = "3"
 
@@ -395,6 +400,7 @@ margin_right = 152.0
 margin_bottom = 170.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
 disabled = true
 text = "4"
 
@@ -405,6 +411,7 @@ margin_right = 324.0
 margin_bottom = 170.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
 disabled = true
 text = "5"
 
@@ -415,6 +422,7 @@ margin_right = 496.0
 margin_bottom = 170.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
 disabled = true
 text = "6"
 
@@ -424,6 +432,7 @@ margin_right = 152.0
 margin_bottom = 265.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
 disabled = true
 text = "7"
 
@@ -434,6 +443,7 @@ margin_right = 324.0
 margin_bottom = 265.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
 disabled = true
 text = "8"
 
@@ -444,6 +454,7 @@ margin_right = 496.0
 margin_bottom = 265.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
 disabled = true
 text = "9"
 
@@ -462,17 +473,19 @@ margin_bottom = 259.0
 
 [node name="lblTitle" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Panel/VBoxContainer"]
 margin_right = 483.0
-margin_bottom = 14.0
+margin_bottom = 21.0
 size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
 text = "Objectives:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="lblDesc" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Panel/VBoxContainer"]
-margin_top = 18.0
+margin_top = 25.0
 margin_right = 483.0
-margin_bottom = 32.0
+margin_bottom = 46.0
+custom_fonts/font = ExtResource( 2 )
 text = "Info:"
 
 [node name="HBoxContainer2" type="CenterContainer" parent="VBoxContainer"]
@@ -489,6 +502,7 @@ margin_bottom = 40.0
 margin_right = 80.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 80, 40 )
+custom_fonts/font = ExtResource( 2 )
 text = "Save"
 
 [node name="btnLaunch" type="Button" parent="VBoxContainer/HBoxContainer2/HBoxContainer"]
@@ -498,6 +512,7 @@ margin_bottom = 40.0
 rect_min_size = Vector2( 80, 40 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
+custom_fonts/font = ExtResource( 2 )
 disabled = true
 text = "Launch"
 
