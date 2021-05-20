@@ -6,7 +6,6 @@ export (float) var maxRotationSpeed : float = 10
 onready var minSpeed : float = Speed * 0.5
 onready var maxSpeed : float = Speed * 1.5
 
-
 var RotationSpeed : float
 
 var velocity : Vector2 = Vector2.DOWN
