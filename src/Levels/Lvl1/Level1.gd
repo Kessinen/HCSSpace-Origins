@@ -1,9 +1,7 @@
 extends "res://Levels/levels.gd"
 
-
-
 func _ready():
-	$EnemySpawner.spawnEnemy("Asteroid",20, Vector2(0,1000))
+	$EnemySpawner.spawnEnemy("Asteroid",20)
 
 func _process(delta):
 	checkLevelStatus()
