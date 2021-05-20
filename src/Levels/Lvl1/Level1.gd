@@ -4,11 +4,6 @@ onready var plstageLost = preload("res://GUI/stageLost.tscn")
 onready var hudStageLost = plstageLost.instance()
 
 func _ready():
-	
-	var player = $Player
-	player.position = PlayerStartingPos
-	player.z_index = -1
-	
 	$EnemySpawner.spawnEnemy("Asteroid",20, Vector2(0,1000))
 
 func _process(delta):

@@ -14,7 +14,7 @@ config/name="HCSpace Origins"
 run/main_scene="res://Menus/Mainmenu.tscn"
 config/icon="res://icon.png"
 config=""
-config/version="v0.9_alpha-9"
+config/version="v0.9_alpha-10-geec7202"
 window/stretch/aspect="keep"
 
 [autoload]
@@ -24,7 +24,7 @@ GameFunctions="*res://Globals/gameFunctions.gd"
 
 [display]
 
-window/stretch/mode="2d"
+window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
 [importer_defaults]
