@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export (int) var HPBase : int = 3
 export (int) var Shields : int = 0
-export (int) var Loot : int = 0
+export (int) var maxLoot : int = 10
 export (int) var Speed : int = 30
 export (int) var enemyLevel : int = 1
 export (int) var damageAmount : int = 1
@@ -23,8 +23,9 @@ func takeDamage(amount):
 		die()
 
 func spawnLoot():
+	randomize()
 	var loot = plLoot.instance()
-	loot.lootValue = enemyLevel * 10
+	loot.lootValue = int(rand_range(maxLoot*0.1, maxLoot) * enemyLevel)
 	loot.position = global_position
 	loot.position.x = clamp(loot.position.x,10,get_viewport().size.x-10)
 	loot.position.y = clamp(loot.position.y,10,get_viewport().size.y-10)
