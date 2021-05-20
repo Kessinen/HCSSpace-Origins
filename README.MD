@@ -4,6 +4,6 @@ HCSpace Origins is a top down space shooter intended as a way for me to learn ma
 ## Download section
 Latest builds can be downloaded from here:
 
-[Linux](https://mega.nz/file/Y7YyCBSZ#PqwIYPpiJFwSVQK7P8eLJY4lr_A77xwLybgMBcbCqiw)
+[Linux](https://mega.nz/file/82x2QBhb#ET6DOXeCtkDTaWb6osEjBN92winq4el_dX3AS7IXvtI)
 
-[Win64](https://mega.nz/file/5jZWhZxK#YhIOGQ42Bzrbg9_tmIhS2v4tV4Kmo--GZ-Kjkxvs9jI)
+[Win64](https://mega.nz/file/pjwmTBjJ#p4WG4xsXBmi_HiO1ofYuDkeOx9i-l8amBpr2A8qv6ws)
