@@ -7,8 +7,14 @@ export var lootValue : int = 1
 
 var attractTarget
 
+var lootColors = {1 : Color.saddlebrown, 10 : Color.silver, 100: Color.gold}
+
 func _ready():
 	$Magnet/CollisionShape2D.shape.radius = playerStats["shipMagnet"] * 20
+	modulate = lootColors[1]
+	for value in lootColors:
+		if lootValue >= value:
+			modulate = lootColors[value]
 
 func _physics_process(delta):
 	if attractTarget != null:
