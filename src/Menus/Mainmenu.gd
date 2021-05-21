@@ -6,7 +6,7 @@ onready var saveFile := File.new()
 
 func _ready():
 	if saveFile.file_exists(gameFunctions.saveFileName):
-		$CenterContainer/PanelContainer/VBoxContainer/btnContinue.disabled = false
+		$VBoxContainer/btnContinue.disabled = false
 	$lblVersion.text = "Version: " + ProjectSettings.get_setting("application/config/version")
 
 func _on_btnQuit_pressed():

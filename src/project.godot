@@ -14,15 +14,22 @@ config/name="HCSpace Origins"
 run/main_scene="res://Menus/Mainmenu.tscn"
 config/icon="res://icon.png"
 config=""
-config/version="v0.9_alpha-20-g1158f0a"
+config/version="v0.9_alpha-23-gdd9d156"
 
 [autoload]
 
 playerStats="*res://Globals/playerStats.gd"
 GameFunctions="*res://Globals/gameFunctions.gd"
 
+[compression]
+
+formats/zlib/compression_level=9
+formats/gzip/compression_level=9
+
 [display]
 
+window/size/width=1280
+window/size/height=720
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
@@ -68,6 +75,10 @@ shoot={
 2d_physics/layer_3="Enemies"
 2d_physics/layer_4="Bullets"
 2d_physics/layer_5="Loot"
+
+[logging]
+
+file_logging/log_path="user://logs/HCSOrigins.log"
 
 [physics]
 
