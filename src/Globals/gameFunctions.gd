@@ -5,6 +5,8 @@ onready var saveFile = File.new()
 
 var saveFileName : String = "user://save.dat"
 
+var menuFade := 0.3
+
 func saveGameData():
 	
 	playerStats.playerData["version"] = ProjectSettings.get_setting("application/config/version")

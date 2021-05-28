@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Menus/Mainmenu.gd" type="Script" id=1]
 [ext_resource path="res://Menus/titlescreen.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Fonts/BasicFont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Fonts/TitleFont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/music/mainmenu.ogg" type="AudioStream" id=5]
 
 [node name="Mainmenu" type="Control"]
 anchor_right = 1.0
@@ -23,8 +25,9 @@ __meta__ = {
 [node name="lblVersion" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -1.12244
 margin_top = 1.41418
-margin_right = -10.0
+margin_right = -11.1224
 margin_bottom = -8.58582
 size_flags_horizontal = 3
 size_flags_vertical = 0
@@ -51,7 +54,8 @@ __meta__ = {
 margin_right = 223.0
 margin_bottom = 57.0
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_hover = Color( 0.745098, 0.368627, 0, 1 )
 text = "New Game"
 flat = true
 align = 2
@@ -59,34 +63,51 @@ align = 2
 [node name="btnContinue" type="Button" parent="VBoxContainer"]
 margin_top = 61.0
 margin_right = 223.0
-margin_bottom = 118.0
+margin_bottom = 119.0
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_hover = Color( 0.745098, 0.368627, 0, 1 )
 disabled = true
 text = "Continue"
 flat = true
 align = 2
 
 [node name="btnOptions" type="Button" parent="VBoxContainer"]
-margin_top = 122.0
+margin_top = 123.0
 margin_right = 223.0
-margin_bottom = 179.0
+margin_bottom = 180.0
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_hover = Color( 0.745098, 0.368627, 0, 1 )
 disabled = true
 text = "Options"
 flat = true
 align = 2
 
 [node name="btnQuit" type="Button" parent="VBoxContainer"]
-margin_top = 183.0
+margin_top = 184.0
 margin_right = 223.0
-margin_bottom = 241.0
+margin_bottom = 242.0
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_hover = Color( 0.745098, 0.368627, 0, 1 )
 text = "Quit"
 flat = true
 align = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
 
 [connection signal="pressed" from="VBoxContainer/btnNewGame" to="." method="_on_btnNewGame_pressed"]
 [connection signal="pressed" from="VBoxContainer/btnContinue" to="." method="_on_btnContinue_pressed"]

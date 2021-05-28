@@ -1,529 +1,1308 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Menus/LevelSelect.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Fonts/BasicFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Menus/sprites/skillPierce_Selected.webp" type="Texture" id=2]
+[ext_resource path="res://Assets/Fonts/SF Atarian System.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Fonts/TitleFont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Menus/title.webp" type="Texture" id=5]
+[ext_resource path="res://Levels/Lvl1/bg.png" type="Texture" id=6]
+[ext_resource path="res://themes/default.tres" type="Theme" id=7]
+[ext_resource path="res://Menus/sprites/pb.webp" type="Texture" id=8]
+[ext_resource path="res://Menus/sprites/pbUnder.webp" type="Texture" id=9]
+[ext_resource path="res://Menus/sprites/btnHover.webp" type="Texture" id=10]
+[ext_resource path="res://Menus/sprites/btnNormal.webp" type="Texture" id=11]
+[ext_resource path="res://Menus/sprites/skillSpread_Disabled.webp" type="Texture" id=12]
+[ext_resource path="res://Menus/sprites/skillDualShot_Selected.webp" type="Texture" id=13]
+[ext_resource path="res://Menus/sprites/skillDualShot_Disabled.webp" type="Texture" id=14]
+[ext_resource path="res://Menus/sprites/skillSpread_Normal.webp" type="Texture" id=15]
+[ext_resource path="res://Menus/sprites/skillPierce_Disabled.webp" type="Texture" id=16]
+[ext_resource path="res://Menus/sprites/skillPierce_Normal.webp" type="Texture" id=17]
+[ext_resource path="res://Menus/sprites/skillSpread_Selected.webp" type="Texture" id=19]
+[ext_resource path="res://Menus/sprites/skillDualShot_Normal.webp" type="Texture" id=20]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.74902, 0.00784314, 0.00784314, 1 )
+[sub_resource type="Theme" id=4]
 
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.2, 0.164706, 0.305882, 1 )
+[sub_resource type="DynamicFont" id=3]
+extra_spacing_char = 2
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.588235, 0.0705882, 0.478431, 1 )
+corner_radius_top_left = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0.905882, 0.109804, 0.733333, 1 )
+corner_radius_top_left = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.431373, 0.321569, 0.411765, 1 )
+corner_radius_top_left = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.639216, 0.0705882, 0.52549, 1 )
+corner_radius_top_left = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.588235, 0.0705882, 0.478431, 1 )
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.905882, 0.109804, 0.733333, 1 )
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.431373, 0.321569, 0.411765, 1 )
+border_blend = true
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.639216, 0.0705882, 0.52549, 1 )
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.588235, 0.0705882, 0.478431, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.223529, 0.0352941, 0.192157, 1 )
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.905882, 0.109804, 0.733333, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.443137, 0.054902, 0.360784, 1 )
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.431373, 0.321569, 0.411765, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.23, 0.1725, 0.219458, 1 )
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.443137, 0.054902, 0.360784, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.580392, 0.0980392, 0.486275, 1 )
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.262745, 0.0470588, 0.219608, 0.627451 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 210, 50 )
+modulate_color = Color( 0.639216, 0.0705882, 0.52549, 1 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 210, 50 )
+modulate_color = Color( 0.639216, 0.0705882, 0.52549, 1 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 210, 50 )
+modulate_color = Color( 0.0392157, 0.639216, 0.278431, 1 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 210, 50 )
+modulate_color = Color( 0.0392157, 0.639216, 0.278431, 1 )
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 0.247059, 0.0313726, 0.2, 1 )
+border_width_left = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.596078, 0.12549, 0.494118, 1 )
+border_blend = true
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="LevelSelect" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 7 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Tween" type="Tween" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 1235.0
+margin_bottom = 675.0
+custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer"]
+margin_right = 565.0
+margin_bottom = 625.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 50
+
+[node name="UpgradeShip" type="MarginContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_right = 565.0
+margin_bottom = 301.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip"]
+margin_right = 565.0
+margin_bottom = 301.0
+
+[node name="Sprite" type="Sprite" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/Sprite"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.701961, 0.701961, 0.701961, 1 )
+text = "Upgrade Ship"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer"]
+margin_right = 565.0
+margin_bottom = 301.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_top = 45
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer"]
+margin_top = 45.0
+margin_right = 565.0
+margin_bottom = 301.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.152941, 0.0235294, 0.12549, 0.756863 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer"]
+margin_top = 45.0
+margin_right = 565.0
+margin_bottom = 301.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer"]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 1004.0
-margin_bottom = 536.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_right = 555.0
+margin_bottom = 246.0
 custom_constants/separation = 10
-alignment = 1
+
+[node name="HP" type="ColorRect" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+margin_right = 545.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 0, 31 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 4 )
+color = Color( 0.443137, 0.054902, 0.360784, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/HP"]
+margin_right = 547.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 15
+custom_constants/margin_top = 5
+custom_constants/margin_left = 15
+custom_constants/margin_bottom = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-margin_right = 497.0
-margin_bottom = 536.0
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/HP/MarginContainer"]
+margin_left = 15.0
+margin_top = 5.0
+margin_right = 532.0
+margin_bottom = 26.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_right = 497.0
-margin_bottom = 303.0
-
-[node name="PanelContainer4" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_right = 497.0
-margin_bottom = 35.0
-
-[node name="lblCash" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/PanelContainer4"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 490.0
-margin_bottom = 28.0
-custom_fonts/font = ExtResource( 2 )
-text = "Cash: 0 $"
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 39.0
-margin_right = 497.0
-margin_bottom = 69.0
-rect_min_size = Vector2( 0, 30 )
-
-[node name="HP" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 73.0
-margin_right = 497.0
-margin_bottom = 108.0
-size_flags_horizontal = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/HP"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 490.0
-margin_bottom = 28.0
-
-[node name="btnMin" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/HP/HBoxContainer"]
-margin_right = 20.0
+[node name="stat" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/HP/MarginContainer/HBoxContainer"]
+margin_right = 120.0
 margin_bottom = 21.0
-rect_min_size = Vector2( 20, 20 )
+rect_min_size = Vector2( 120, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+text = "Hit Points"
+valign = 1
+
+[node name="minus" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/HP/MarginContainer/HBoxContainer"]
+margin_left = 119.0
+margin_right = 142.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 21, 21 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
+custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
+custom_colors/font_color = Color( 1, 0.117647, 0.811765, 1 )
+custom_colors/font_color_hover = Color( 0.996078, 0.423529, 0.0431373, 1 )
 disabled = true
 text = "-"
 
-[node name="pbarValue" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/HP/HBoxContainer"]
-margin_left = 24.0
-margin_right = 174.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 150, 20 )
-custom_styles/fg = SubResource( 1 )
-custom_styles/bg = SubResource( 2 )
+[node name="pbHP" type="TextureProgress" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/HP/MarginContainer/HBoxContainer"]
+margin_left = 141.0
+margin_right = 341.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 200, 21 )
+size_flags_vertical = 3
 min_value = 1.0
 max_value = 10.0
-step = 1.0
-value = 1.0
-percent_visible = false
+value = 10.0
+texture_under = ExtResource( 9 )
+texture_progress = ExtResource( 8 )
+tint_progress = Color( 0.0392157, 0.639216, 0.278431, 1 )
 
-[node name="btnPlus" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/HP/HBoxContainer"]
-margin_left = 178.0
-margin_right = 198.0
+[node name="plus" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/HP/MarginContainer/HBoxContainer"]
+margin_left = 340.0
+margin_right = 363.0
 margin_bottom = 21.0
-rect_min_size = Vector2( 20, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 21 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 19 )
+custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
 disabled = true
 text = "+"
 
-[node name="lblTitle" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/HP/HBoxContainer"]
-margin_left = 202.0
-margin_right = 483.0
+[node name="cost" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/HP/MarginContainer/HBoxContainer"]
+margin_left = 362.0
+margin_right = 517.0
 margin_bottom = 21.0
+rect_min_size = Vector2( 155, 0 )
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 2 )
-text = "HP"
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+text = "$ 13543"
+align = 2
+valign = 1
 
-[node name="Speed" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 112.0
-margin_right = 497.0
-margin_bottom = 147.0
+[node name="Speed" type="ColorRect" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+margin_top = 41.0
+margin_right = 545.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 0, 31 )
 size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 4 )
+color = Color( 0.443137, 0.054902, 0.360784, 1 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Speed"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 490.0
-margin_bottom = 28.0
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Speed"]
+margin_right = 547.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 15
+custom_constants/margin_top = 5
+custom_constants/margin_left = 15
+custom_constants/margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="btnMin" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Speed/HBoxContainer"]
-margin_right = 20.0
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Speed/MarginContainer"]
+margin_left = 15.0
+margin_top = 5.0
+margin_right = 532.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stat" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Speed/MarginContainer/HBoxContainer"]
+margin_right = 120.0
 margin_bottom = 21.0
-rect_min_size = Vector2( 20, 20 )
-disabled = true
-text = "-"
-
-[node name="pbarValue" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Speed/HBoxContainer"]
-margin_left = 24.0
-margin_right = 174.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 150, 20 )
-custom_styles/fg = SubResource( 1 )
-custom_styles/bg = SubResource( 2 )
-min_value = 1.0
-max_value = 10.0
-step = 1.0
-value = 1.0
-percent_visible = false
-
-[node name="btnPlus" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Speed/HBoxContainer"]
-margin_left = 178.0
-margin_right = 198.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 20, 20 )
-disabled = true
-text = "+"
-
-[node name="lblTitle" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Speed/HBoxContainer"]
-margin_left = 202.0
-margin_right = 240.0
-margin_bottom = 21.0
-custom_fonts/font = ExtResource( 2 )
+rect_min_size = Vector2( 120, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
 text = "Speed"
+valign = 1
 
-[node name="Handling" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 151.0
-margin_right = 497.0
-margin_bottom = 186.0
-size_flags_horizontal = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Handling"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 490.0
-margin_bottom = 28.0
-
-[node name="btnMin" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Handling/HBoxContainer"]
-margin_right = 20.0
+[node name="minus" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Speed/MarginContainer/HBoxContainer"]
+margin_left = 119.0
+margin_right = 142.0
 margin_bottom = 21.0
-rect_min_size = Vector2( 20, 20 )
+rect_min_size = Vector2( 21, 21 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
+custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
+custom_colors/font_color = Color( 1, 0.117647, 0.811765, 1 )
+custom_colors/font_color_hover = Color( 0.996078, 0.423529, 0.0431373, 1 )
 disabled = true
 text = "-"
 
-[node name="pbarValue" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Handling/HBoxContainer"]
-margin_left = 24.0
-margin_right = 174.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 150, 20 )
-custom_styles/fg = SubResource( 1 )
-custom_styles/bg = SubResource( 2 )
+[node name="pbSpeed" type="TextureProgress" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Speed/MarginContainer/HBoxContainer"]
+margin_left = 141.0
+margin_right = 341.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 200, 21 )
+size_flags_vertical = 3
 min_value = 1.0
 max_value = 10.0
-step = 1.0
-value = 1.0
-percent_visible = false
+value = 10.0
+texture_under = ExtResource( 9 )
+texture_progress = ExtResource( 8 )
+tint_progress = Color( 0.0392157, 0.639216, 0.278431, 1 )
 
-[node name="btnPlus" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Handling/HBoxContainer"]
-margin_left = 178.0
-margin_right = 198.0
+[node name="plus" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Speed/MarginContainer/HBoxContainer"]
+margin_left = 340.0
+margin_right = 363.0
 margin_bottom = 21.0
-rect_min_size = Vector2( 20, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 21 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 19 )
+custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
 disabled = true
 text = "+"
 
-[node name="lblTitle" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Handling/HBoxContainer"]
-margin_left = 202.0
-margin_right = 259.0
+[node name="cost" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Speed/MarginContainer/HBoxContainer"]
+margin_left = 362.0
+margin_right = 517.0
 margin_bottom = 21.0
-custom_fonts/font = ExtResource( 2 )
+rect_min_size = Vector2( 155, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+text = "$ 13543"
+align = 2
+valign = 1
+
+[node name="Handling" type="ColorRect" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+margin_top = 82.0
+margin_right = 545.0
+margin_bottom = 113.0
+rect_min_size = Vector2( 0, 31 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 4 )
+color = Color( 0.443137, 0.054902, 0.360784, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Handling"]
+margin_right = 547.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 15
+custom_constants/margin_top = 5
+custom_constants/margin_left = 15
+custom_constants/margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Handling/MarginContainer"]
+margin_left = 15.0
+margin_top = 5.0
+margin_right = 532.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stat" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Handling/MarginContainer/HBoxContainer"]
+margin_right = 120.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 120, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
 text = "Handling"
+valign = 1
 
-[node name="RoF" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 190.0
-margin_right = 497.0
-margin_bottom = 225.0
-size_flags_horizontal = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/RoF"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 490.0
-margin_bottom = 28.0
-
-[node name="btnMin" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/RoF/HBoxContainer"]
-margin_right = 20.0
+[node name="minus" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Handling/MarginContainer/HBoxContainer"]
+margin_left = 119.0
+margin_right = 142.0
 margin_bottom = 21.0
-rect_min_size = Vector2( 20, 20 )
+rect_min_size = Vector2( 21, 21 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
+custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
+custom_colors/font_color = Color( 1, 0.117647, 0.811765, 1 )
+custom_colors/font_color_hover = Color( 0.996078, 0.423529, 0.0431373, 1 )
 disabled = true
 text = "-"
 
-[node name="pbarValue" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/RoF/HBoxContainer"]
-margin_left = 24.0
-margin_right = 174.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 150, 20 )
-custom_styles/fg = SubResource( 1 )
-custom_styles/bg = SubResource( 2 )
+[node name="pbHandling" type="TextureProgress" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Handling/MarginContainer/HBoxContainer"]
+margin_left = 141.0
+margin_right = 341.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 200, 21 )
+size_flags_vertical = 3
 min_value = 1.0
 max_value = 10.0
-step = 1.0
-value = 1.0
-percent_visible = false
+value = 10.0
+texture_under = ExtResource( 9 )
+texture_progress = ExtResource( 8 )
+tint_progress = Color( 0.0392157, 0.639216, 0.278431, 1 )
 
-[node name="btnPlus" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/RoF/HBoxContainer"]
-margin_left = 178.0
-margin_right = 198.0
+[node name="plus" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Handling/MarginContainer/HBoxContainer"]
+margin_left = 340.0
+margin_right = 363.0
 margin_bottom = 21.0
-rect_min_size = Vector2( 20, 20 )
-disabled = true
-text = "+"
-
-[node name="lblTitle" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/RoF/HBoxContainer"]
-margin_left = 202.0
-margin_right = 278.0
-margin_bottom = 21.0
-custom_fonts/font = ExtResource( 2 )
-text = "Rate of fire"
-
-[node name="Damage" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 229.0
-margin_right = 497.0
-margin_bottom = 264.0
 size_flags_horizontal = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Damage"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 490.0
-margin_bottom = 28.0
-
-[node name="btnMin" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Damage/HBoxContainer"]
-margin_right = 20.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 20, 20 )
-disabled = true
-text = "-"
-
-[node name="pbarValue" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Damage/HBoxContainer"]
-margin_left = 24.0
-margin_right = 174.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 150, 20 )
-custom_styles/fg = SubResource( 1 )
-custom_styles/bg = SubResource( 2 )
-min_value = 1.0
-max_value = 10.0
-step = 1.0
-value = 1.0
-percent_visible = false
-
-[node name="btnPlus" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Damage/HBoxContainer"]
-margin_left = 178.0
-margin_right = 198.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 20, 20 )
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 21 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 19 )
+custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
 disabled = true
 text = "+"
 
-[node name="lblTitle" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Damage/HBoxContainer"]
-margin_left = 202.0
-margin_right = 251.0
+[node name="cost" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Handling/MarginContainer/HBoxContainer"]
+margin_left = 362.0
+margin_right = 517.0
 margin_bottom = 21.0
-custom_fonts/font = ExtResource( 2 )
+rect_min_size = Vector2( 155, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+text = "$ 13543"
+align = 2
+valign = 1
+
+[node name="Damage" type="ColorRect" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+margin_top = 123.0
+margin_right = 545.0
+margin_bottom = 154.0
+rect_min_size = Vector2( 0, 31 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 4 )
+color = Color( 0.443137, 0.054902, 0.360784, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Damage"]
+margin_right = 547.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 15
+custom_constants/margin_top = 5
+custom_constants/margin_left = 15
+custom_constants/margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Damage/MarginContainer"]
+margin_left = 15.0
+margin_top = 5.0
+margin_right = 532.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stat" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Damage/MarginContainer/HBoxContainer"]
+margin_right = 120.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 120, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
 text = "Damage"
+valign = 1
 
-[node name="Magnet" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 268.0
-margin_right = 497.0
-margin_bottom = 303.0
-size_flags_horizontal = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Magnet"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 490.0
-margin_bottom = 28.0
-
-[node name="btnMin" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Magnet/HBoxContainer"]
-margin_right = 20.0
+[node name="minus" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Damage/MarginContainer/HBoxContainer"]
+margin_left = 119.0
+margin_right = 142.0
 margin_bottom = 21.0
-rect_min_size = Vector2( 20, 20 )
+rect_min_size = Vector2( 21, 21 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
+custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
+custom_colors/font_color = Color( 1, 0.117647, 0.811765, 1 )
+custom_colors/font_color_hover = Color( 0.996078, 0.423529, 0.0431373, 1 )
 disabled = true
 text = "-"
 
-[node name="pbarValue" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Magnet/HBoxContainer"]
-margin_left = 24.0
-margin_right = 174.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 150, 20 )
-custom_styles/fg = SubResource( 1 )
-custom_styles/bg = SubResource( 2 )
+[node name="pbDamage" type="TextureProgress" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Damage/MarginContainer/HBoxContainer"]
+margin_left = 141.0
+margin_right = 341.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 200, 21 )
+size_flags_vertical = 3
 min_value = 1.0
 max_value = 10.0
-step = 1.0
-value = 1.0
-percent_visible = false
+value = 10.0
+texture_under = ExtResource( 9 )
+texture_progress = ExtResource( 8 )
+tint_progress = Color( 0.0392157, 0.639216, 0.278431, 1 )
 
-[node name="btnPlus" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Magnet/HBoxContainer"]
-margin_left = 178.0
-margin_right = 198.0
+[node name="plus" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Damage/MarginContainer/HBoxContainer"]
+margin_left = 340.0
+margin_right = 363.0
 margin_bottom = 21.0
-rect_min_size = Vector2( 20, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 21 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 19 )
+custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
 disabled = true
 text = "+"
 
-[node name="lblTitle" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Magnet/HBoxContainer"]
-margin_left = 202.0
-margin_right = 251.0
+[node name="cost" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Damage/MarginContainer/HBoxContainer"]
+margin_left = 362.0
+margin_right = 517.0
 margin_bottom = 21.0
-custom_fonts/font = ExtResource( 2 )
+rect_min_size = Vector2( 155, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+text = "$ 13543"
+align = 2
+valign = 1
+
+[node name="RoF" type="ColorRect" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+margin_top = 164.0
+margin_right = 545.0
+margin_bottom = 195.0
+rect_min_size = Vector2( 0, 31 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 4 )
+color = Color( 0.443137, 0.054902, 0.360784, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/RoF"]
+margin_right = 547.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 15
+custom_constants/margin_top = 5
+custom_constants/margin_left = 15
+custom_constants/margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/RoF/MarginContainer"]
+margin_left = 15.0
+margin_top = 5.0
+margin_right = 532.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stat" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/RoF/MarginContainer/HBoxContainer"]
+margin_right = 120.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 120, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+text = "Rate of Fire"
+valign = 1
+
+[node name="minus" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/RoF/MarginContainer/HBoxContainer"]
+margin_left = 119.0
+margin_right = 142.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 21, 21 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
+custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
+custom_colors/font_color = Color( 1, 0.117647, 0.811765, 1 )
+custom_colors/font_color_hover = Color( 0.996078, 0.423529, 0.0431373, 1 )
+disabled = true
+text = "-"
+
+[node name="pbRoF" type="TextureProgress" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/RoF/MarginContainer/HBoxContainer"]
+margin_left = 141.0
+margin_right = 341.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 200, 21 )
+size_flags_vertical = 3
+min_value = 1.0
+max_value = 10.0
+value = 10.0
+texture_under = ExtResource( 9 )
+texture_progress = ExtResource( 8 )
+tint_progress = Color( 0.0392157, 0.639216, 0.278431, 1 )
+
+[node name="plus" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/RoF/MarginContainer/HBoxContainer"]
+margin_left = 340.0
+margin_right = 363.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 21 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 19 )
+custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
+disabled = true
+text = "+"
+
+[node name="cost" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/RoF/MarginContainer/HBoxContainer"]
+margin_left = 362.0
+margin_right = 517.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 155, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+text = "$ 13543"
+align = 2
+valign = 1
+
+[node name="Magnet" type="ColorRect" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+margin_top = 205.0
+margin_right = 545.0
+margin_bottom = 236.0
+rect_min_size = Vector2( 0, 31 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 4 )
+color = Color( 0.443137, 0.054902, 0.360784, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Magnet"]
+margin_right = 547.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 15
+custom_constants/margin_top = 5
+custom_constants/margin_left = 15
+custom_constants/margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Magnet/MarginContainer"]
+margin_left = 15.0
+margin_top = 5.0
+margin_right = 532.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stat" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Magnet/MarginContainer/HBoxContainer"]
+margin_right = 120.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 120, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
 text = "Magnet"
+valign = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-margin_left = 507.0
-margin_right = 1004.0
-margin_bottom = 536.0
+[node name="minus" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Magnet/MarginContainer/HBoxContainer"]
+margin_left = 119.0
+margin_right = 142.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 21, 21 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
+custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
+custom_colors/font_color = Color( 1, 0.117647, 0.811765, 1 )
+custom_colors/font_color_hover = Color( 0.996078, 0.423529, 0.0431373, 1 )
+disabled = true
+text = "-"
+
+[node name="pbMagnet" type="TextureProgress" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Magnet/MarginContainer/HBoxContainer"]
+margin_left = 141.0
+margin_right = 341.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 200, 21 )
+size_flags_vertical = 3
+min_value = 1.0
+max_value = 10.0
+value = 10.0
+texture_under = ExtResource( 9 )
+texture_progress = ExtResource( 8 )
+tint_progress = Color( 0.0392157, 0.639216, 0.278431, 1 )
+
+[node name="plus" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Magnet/MarginContainer/HBoxContainer"]
+margin_left = 340.0
+margin_right = 363.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 21 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 19 )
+custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
+disabled = true
+text = "+"
+
+[node name="cost" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Magnet/MarginContainer/HBoxContainer"]
+margin_left = 362.0
+margin_right = 517.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 155, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+text = "$ 13543"
+align = 2
+valign = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 351.0
+margin_right = 565.0
+margin_bottom = 625.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="levelsGrid" type="GridContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
-margin_right = 497.0
-margin_bottom = 266.0
+[node name="ColorRect" type="ColorRect" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer2"]
+margin_right = 565.0
+margin_bottom = 274.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/vseparation = 20
-custom_constants/hseparation = 20
+color = Color( 0.152941, 0.0235294, 0.12549, 0.756863 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer2"]
+margin_right = 565.0
+margin_bottom = 274.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer"]
+margin_right = 565.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 0, 45 )
+
+[node name="Sprite2" type="Sprite" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer/Sprite2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.701961, 0.701961, 0.701961, 1 )
+text = "Skills"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer2" type="MarginContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer"]
+margin_top = 49.0
+margin_right = 565.0
+margin_bottom = 274.0
+rect_min_size = Vector2( 0, 45 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+
+[node name="GridContainer" type="GridContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer2"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 540.0
+margin_bottom = 200.0
+custom_constants/vseparation = 10
 columns = 3
 
-[node name="Lvl1" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/levelsGrid"]
-margin_right = 152.0
-margin_bottom = 75.0
+[node name="skill1" type="TextureButton" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer2/GridContainer"]
+margin_left = 27.0
+margin_right = 142.0
+margin_bottom = 115.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+disabled = true
+toggle_mode = true
+texture_normal = ExtResource( 20 )
+texture_pressed = ExtResource( 13 )
+texture_disabled = ExtResource( 14 )
+
+[node name="skill2" type="TextureButton" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer2/GridContainer"]
+margin_left = 200.0
+margin_right = 315.0
+margin_bottom = 115.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+disabled = true
+toggle_mode = true
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 19 )
+texture_disabled = ExtResource( 12 )
+
+[node name="skill3" type="TextureButton" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer2/GridContainer"]
+margin_left = 373.0
+margin_right = 488.0
+margin_bottom = 115.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+disabled = true
+toggle_mode = true
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 2 )
+texture_disabled = ExtResource( 16 )
+
+[node name="lblSkill1" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer2/GridContainer"]
+margin_top = 125.0
+margin_right = 169.0
+margin_bottom = 175.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
-disabled = true
+text = "Extra Gun
+($ 1000)"
+align = 1
+
+[node name="lblSkill2" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer2/GridContainer"]
+margin_left = 173.0
+margin_top = 125.0
+margin_right = 342.0
+margin_bottom = 175.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Bullet spread
+($ 1000)"
+align = 1
+
+[node name="lblSkill3" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer2/GridContainer"]
+margin_left = 346.0
+margin_top = 125.0
+margin_right = 515.0
+margin_bottom = 175.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Pierce (30% prob.)
+($ 1000)"
+align = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer"]
+margin_left = 615.0
+margin_right = 1185.0
+margin_bottom = 625.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 50
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2"]
+margin_right = 570.0
+margin_bottom = 525.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer"]
+margin_right = 570.0
+margin_bottom = 525.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.152941, 0.0235294, 0.12549, 0.756863 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer"]
+margin_right = 570.0
+margin_bottom = 525.0
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
+margin_right = 570.0
+margin_bottom = 45.0
+texture = ExtResource( 5 )
+
+[node name="Label2" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.701961, 0.701961, 0.701961, 1 )
+text = "Mission"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
+margin_top = 49.0
+margin_right = 570.0
+margin_bottom = 525.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 545.0
+margin_bottom = 451.0
+custom_constants/separation = 25
+
+[node name="GridContainer" type="GridContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+margin_right = 520.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 25
+custom_constants/hseparation = 25
+columns = 3
+
+[node name="btnlvl1" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_right = 156.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 9 )
+custom_colors/font_color_disabled = Color( 0.3, 0.225, 0.28625, 1 )
+custom_colors/font_color = Color( 1, 0.12, 0.809333, 1 )
+custom_colors/font_color_hover = Color( 0.996078, 0.470588, 0.117647, 1 )
 text = "1"
 
-[node name="Lvl2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/levelsGrid"]
-margin_left = 172.0
-margin_right = 324.0
-margin_bottom = 75.0
+[node name="btnlvl2" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 181.0
+margin_right = 337.0
+margin_bottom = 50.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 9 )
+custom_colors/font_color_disabled = Color( 0.3, 0.225, 0.28625, 1 )
+custom_colors/font_color = Color( 1, 0.12, 0.809333, 1 )
+custom_colors/font_color_hover = Color( 0.996078, 0.470588, 0.117647, 1 )
 disabled = true
 text = "2"
 
-[node name="Lvl3" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/levelsGrid"]
-margin_left = 344.0
-margin_right = 496.0
-margin_bottom = 75.0
+[node name="btnlvl3" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 362.0
+margin_right = 518.0
+margin_bottom = 50.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 9 )
+custom_colors/font_color_disabled = Color( 0.3, 0.225, 0.28625, 1 )
+custom_colors/font_color = Color( 1, 0.12, 0.809333, 1 )
+custom_colors/font_color_hover = Color( 0.996078, 0.470588, 0.117647, 1 )
 disabled = true
 text = "3"
 
-[node name="Lvl4" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/levelsGrid"]
-margin_top = 95.0
-margin_right = 152.0
-margin_bottom = 170.0
+[node name="btnlvl4" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 75.0
+margin_right = 156.0
+margin_bottom = 125.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 9 )
+custom_colors/font_color_disabled = Color( 0.3, 0.225, 0.28625, 1 )
+custom_colors/font_color = Color( 1, 0.12, 0.809333, 1 )
+custom_colors/font_color_hover = Color( 0.996078, 0.470588, 0.117647, 1 )
 disabled = true
-text = "4"
+text = "3"
 
-[node name="Lvl5" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/levelsGrid"]
-margin_left = 172.0
-margin_top = 95.0
-margin_right = 324.0
-margin_bottom = 170.0
+[node name="btnlvl5" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 181.0
+margin_top = 75.0
+margin_right = 337.0
+margin_bottom = 125.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 9 )
+custom_colors/font_color_disabled = Color( 0.3, 0.225, 0.28625, 1 )
+custom_colors/font_color = Color( 1, 0.12, 0.809333, 1 )
+custom_colors/font_color_hover = Color( 0.996078, 0.470588, 0.117647, 1 )
 disabled = true
-text = "5"
+text = "3"
 
-[node name="Lvl6" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/levelsGrid"]
-margin_left = 344.0
-margin_top = 95.0
-margin_right = 496.0
-margin_bottom = 170.0
+[node name="btnlvl6" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 362.0
+margin_top = 75.0
+margin_right = 518.0
+margin_bottom = 125.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 9 )
+custom_colors/font_color_disabled = Color( 0.3, 0.225, 0.28625, 1 )
+custom_colors/font_color = Color( 1, 0.12, 0.809333, 1 )
+custom_colors/font_color_hover = Color( 0.996078, 0.470588, 0.117647, 1 )
 disabled = true
-text = "6"
+text = "3"
 
-[node name="Lvl7" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/levelsGrid"]
-margin_top = 190.0
-margin_right = 152.0
-margin_bottom = 265.0
+[node name="btnlvl7" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 150.0
+margin_right = 156.0
+margin_bottom = 200.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 9 )
+custom_colors/font_color_disabled = Color( 0.3, 0.225, 0.28625, 1 )
+custom_colors/font_color = Color( 1, 0.12, 0.809333, 1 )
+custom_colors/font_color_hover = Color( 0.996078, 0.470588, 0.117647, 1 )
 disabled = true
-text = "7"
+text = "3"
 
-[node name="Lvl8" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/levelsGrid"]
-margin_left = 172.0
-margin_top = 190.0
-margin_right = 324.0
-margin_bottom = 265.0
+[node name="btnlvl8" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 181.0
+margin_top = 150.0
+margin_right = 337.0
+margin_bottom = 200.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 9 )
+custom_colors/font_color_disabled = Color( 0.3, 0.225, 0.28625, 1 )
+custom_colors/font_color = Color( 1, 0.12, 0.809333, 1 )
+custom_colors/font_color_hover = Color( 0.996078, 0.470588, 0.117647, 1 )
 disabled = true
-text = "8"
+text = "3"
 
-[node name="Lvl9" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/levelsGrid"]
-margin_left = 344.0
-margin_top = 190.0
-margin_right = 496.0
-margin_bottom = 265.0
+[node name="btnlvl9" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 362.0
+margin_top = 150.0
+margin_right = 518.0
+margin_bottom = 200.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 9 )
+custom_colors/font_color_disabled = Color( 0.3, 0.225, 0.28625, 1 )
+custom_colors/font_color = Color( 1, 0.12, 0.809333, 1 )
+custom_colors/font_color_hover = Color( 0.996078, 0.470588, 0.117647, 1 )
 disabled = true
-text = "9"
+text = "3"
 
-[node name="Panel" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
-margin_top = 270.0
-margin_right = 497.0
-margin_bottom = 536.0
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 225.0
+margin_right = 520.0
+margin_bottom = 426.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Panel"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 490.0
-margin_bottom = 259.0
-
-[node name="lblTitle" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Panel/VBoxContainer"]
-margin_right = 483.0
-margin_bottom = 21.0
-size_flags_vertical = 1
-custom_fonts/font = ExtResource( 2 )
-text = "Objectives:"
+custom_constants/separation = -1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="lblDesc" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Panel/VBoxContainer"]
-margin_top = 25.0
-margin_right = 483.0
-margin_bottom = 46.0
-custom_fonts/font = ExtResource( 2 )
-text = "Info:"
+[node name="lblMissionObjective" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_right = 520.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_styles/normal = SubResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="HBoxContainer2" type="CenterContainer" parent="VBoxContainer"]
-margin_top = 540.0
-margin_right = 1004.0
-margin_bottom = 580.0
+[node name="lblMissionDescription" type="Label" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 20.0
+margin_right = 520.0
+margin_bottom = 201.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_styles/normal = SubResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 420.0
-margin_right = 584.0
-margin_bottom = 40.0
+[node name="MarginContainer2" type="MarginContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 575.0
+margin_right = 570.0
+margin_bottom = 625.0
+size_flags_horizontal = 3
+size_flags_vertical = 9
+custom_constants/margin_right = 50
+custom_constants/margin_top = 0
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 0
 
-[node name="btnSaveGame" type="Button" parent="VBoxContainer/HBoxContainer2/HBoxContainer"]
-margin_right = 80.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 80, 40 )
-custom_fonts/font = ExtResource( 2 )
-text = "Save"
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2"]
+margin_left = 50.0
+margin_right = 520.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 50
 
-[node name="btnLaunch" type="Button" parent="VBoxContainer/HBoxContainer2/HBoxContainer"]
-margin_left = 84.0
-margin_right = 164.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 80, 40 )
-size_flags_horizontal = 0
-size_flags_vertical = 0
-custom_fonts/font = ExtResource( 2 )
+[node name="btnMainmenu" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/HBoxContainer"]
+margin_right = 210.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 210, 50 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+text = "Main menu"
+
+[node name="btnLaunch" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/HBoxContainer"]
+margin_left = 260.0
+margin_right = 470.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 210, 50 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 disabled = true
 text = "Launch"
 
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/levelsGrid/Lvl1" to="." method="_on_LvlSelected_pressed" binds= [ 1 ]]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/levelsGrid/Lvl2" to="." method="_on_LvlSelected_pressed" binds= [ 2 ]]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/levelsGrid/Lvl3" to="." method="_on_LvlSelected_pressed" binds= [ 3 ]]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/levelsGrid/Lvl4" to="." method="_on_LvlSelected_pressed" binds= [ 4 ]]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/levelsGrid/Lvl5" to="." method="_on_LvlSelected_pressed" binds= [ 5 ]]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/levelsGrid/Lvl6" to="." method="_on_LvlSelected_pressed" binds= [ 6 ]]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/levelsGrid/Lvl7" to="." method="_on_LvlSelected_pressed" binds= [ 7 ]]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/levelsGrid/Lvl8" to="." method="_on_LvlSelected_pressed" binds= [ 8 ]]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/levelsGrid/Lvl9" to="." method="_on_LvlSelected_pressed" binds= [ 9 ]]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer2/HBoxContainer/btnSaveGame" to="." method="_on_btnSaveGame_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer2/HBoxContainer/btnLaunch" to="." method="_on_btnLaunch_pressed"]
+[node name="lblCash" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -75.0
+margin_right = 75.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 150, 40 )
+custom_styles/normal = SubResource( 22 )
+text = "Cash: $ 0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer2/GridContainer/skill1" to="." method="_on_skill_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer2/GridContainer/skill2" to="." method="_on_skill_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer2/GridContainer/skill3" to="." method="_on_skill_pressed" binds= [ 3 ]]
+[connection signal="pressed" from="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer/btnlvl1" to="." method="_on_LvlSelected_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/HBoxContainer/btnMainmenu" to="." method="_on_btnMainmenu_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/HBoxContainer/btnLaunch" to="." method="_on_btnLaunch_pressed"]

@@ -24,7 +24,7 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 512, 550 )
+position = Vector2( 640, 640 )
 
 [node name="EnemySpawner" parent="." instance=ExtResource( 1 )]
 
