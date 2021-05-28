@@ -9,6 +9,8 @@ onready var playerStats = get_node("/root/playerStats").playerData
 
 var curHP : int
 var velocity = Vector2.ZERO
+var noOfGuns = 1
+onready var rofTimer = $rofTimer
 onready var plBullet1 = preload("res://Bullets/Player/Bullet1.tscn")
 onready var plDied = preload("res://GUI/stageLost.tscn")
 
@@ -18,6 +20,10 @@ signal IDied()
 
 func _ready():
 	curHP = playerStats["shipHP"]
+	rofTimer.wait_time = 1 - (float(playerStats["shipRoF"]) * 0.099)
+	if playerStats["skill1"]:
+		$Guns/Gun1.position.x = -20
+		noOfGuns = 2
 
 
 func _physics_process(delta):
@@ -28,7 +34,6 @@ func _physics_process(delta):
 		fireGuns()
 
 func moveShip():
-	
 	var input_vector : Vector2
 	var accelerate := int(Input.get_action_strength("move_down") - Input.get_action_strength("move_up"))
 	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
@@ -59,16 +64,16 @@ func moveShip():
 		engine.lifetime = exhaustLifeTime
 		engine.process_material.set("initial_velocity", exhaustVelocity)
 
-
 func fireGuns():
-	var rofTimer = $rofTimer
-	rofTimer.wait_time = 1 - (float(playerStats["shipRoF"]) * 0.099)
-	var bullet = plBullet1.instance()
-	bullet.position = $Gun.global_position
-
-	if rofTimer.is_stopped():
+	if not rofTimer.is_stopped():
+		return
+	
+	for i in range(1, noOfGuns+1):
+		var bullet = plBullet1.instance()
+		bullet.position = get_node("Guns/Gun" + str(i)).global_position
 		get_parent().add_child(bullet)
-		rofTimer.start()
+		
+	rofTimer.start()
 
 func takeDamage(amount : int):
 	curHP -= amount

@@ -14,7 +14,7 @@ config/name="HCSpace Origins"
 run/main_scene="res://Menus/Mainmenu.tscn"
 config/icon="res://icon.png"
 config=""
-config/version="v0.9_alpha-23-gdd9d156"
+config/version="v0.9_alpha-27-gab6f537"
 
 [autoload]
 

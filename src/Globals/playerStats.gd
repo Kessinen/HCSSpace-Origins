@@ -10,7 +10,10 @@ var playerData = {
 	"shipHandling" : 1,
 	"shipMagnet" : 1,
 	"shipSpeed" : 1,
-	"highestLevel" :1
+	"highestLevel" :1,
+	"skill1" : false,
+	"skill2" : false,
+	"skill3" : false
 }
 var upgradeCostMultiplier = {
 	"HP" : 1.5,
@@ -31,5 +34,5 @@ var upgradeBasePrices = {
 	"Speed" : 130,
 }
 
-
+var skillCosts = [1500,2000,800]
 
