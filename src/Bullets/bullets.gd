@@ -1,11 +1,8 @@
 extends Area2D
 
-onready var playerStats = get_node("/root/playerStats").playerData
+class_name bullets
 
-export var bulletDamage : int
+export (int) var bulletDamage : int = 1
 export var bulletSpeed : int = 200
-export var playerBullet : bool = true
-
-
-func _ready():
-	bulletDamage = playerStats["shipDamage"]
+export var playerBullet : bool = false
+export (Texture) var bulletSprite

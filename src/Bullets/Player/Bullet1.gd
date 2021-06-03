@@ -1,7 +1,6 @@
 extends "res://Bullets/bullets.gd"
 
-func _ready():
-	playerBullet = true
+onready var playerStats = get_node("/root/playerStats").playerData
 
 func _physics_process(delta):
 	position.y = position.y - bulletSpeed * delta

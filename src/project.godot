@@ -8,13 +8,23 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "bullets",
+"language": "GDScript",
+"path": "res://Bullets/bullets.gd"
+} ]
+_global_script_class_icons={
+"bullets": ""
+}
+
 [application]
 
 config/name="HCSpace Origins"
 run/main_scene="res://Menus/Mainmenu.tscn"
 config/icon="res://icon.png"
 config=""
-config/version="v0.9_alpha-27-gab6f537"
+config/version="v0.9_alpha-30-g2a198be"
 
 [autoload]
 

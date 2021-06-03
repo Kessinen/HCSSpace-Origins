@@ -6,6 +6,7 @@ export (int) var maxLoot : int = 10
 export (int) var Speed : int = 30
 export (int) var enemyLevel : int = 1
 export (int) var damageAmount : int = 1
+export (int) var RoF : int = 1
 
 onready var HP = HPBase * enemyLevel
 
