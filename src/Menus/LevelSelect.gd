@@ -13,10 +13,10 @@ var stats = ["HP", "Speed", "Handling", "RoF", "Damage", "Magnet"]
 var descriptions = [
 	{
 		"title" : "Survive",
-		"desc" : "Just just! Jos nyt hengissä selviäisit ni hyvä!"
+		"desc" : "You've barely escaped! The enemy is hot on your trail so you decide to try to out maneuver them in the near by asteroid field. Just don't die on me."
 	},{
-		"title" : "TBA",
-		"desc" : "Tulossa..."
+		"title" : "Kill 5 enemies",
+		"desc" : "Oh NO! A small fighter group has managed to pursue you in to the asteroid field. Destroy them! Before they give away your position to the main fleet."
 	}
 	]
 
@@ -112,7 +112,7 @@ func updateGui():
 func _on_LvlSelected_pressed(extra_arg_0):
 	selectedLevel = extra_arg_0
 	$TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer/lblMissionObjective.text = "Objectives: " + descriptions[extra_arg_0-1]["title"]
-	$TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer/lblMissionDescription.text = "Info: " + descriptions[extra_arg_0-1]["desc"]
+	$TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer/lblMissionDescription.text = descriptions[extra_arg_0-1]["desc"]
 	$TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/HBoxContainer/btnLaunch.disabled = false
 
 func _on_btnLaunch_pressed():

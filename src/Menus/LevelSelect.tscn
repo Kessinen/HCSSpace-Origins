@@ -20,54 +20,54 @@
 [ext_resource path="res://Menus/sprites/skillSpread_Selected.webp" type="Texture" id=19]
 [ext_resource path="res://Menus/sprites/skillDualShot_Normal.webp" type="Texture" id=20]
 
-[sub_resource type="Theme" id=4]
+[sub_resource type="Theme" id=1]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 extra_spacing_char = 2
 font_data = ExtResource( 3 )
 
-[sub_resource type="StyleBoxFlat" id=16]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.588235, 0.0705882, 0.478431, 1 )
 corner_radius_top_left = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id=20]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.905882, 0.109804, 0.733333, 1 )
 corner_radius_top_left = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id=13]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.431373, 0.321569, 0.411765, 1 )
 corner_radius_top_left = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id=14]
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.639216, 0.0705882, 0.52549, 1 )
 corner_radius_top_left = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id=17]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.588235, 0.0705882, 0.478431, 1 )
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 
-[sub_resource type="StyleBoxFlat" id=21]
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.905882, 0.109804, 0.733333, 1 )
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 
-[sub_resource type="StyleBoxFlat" id=18]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.431373, 0.321569, 0.411765, 1 )
 border_blend = true
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 
-[sub_resource type="StyleBoxFlat" id=19]
+[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.639216, 0.0705882, 0.52549, 1 )
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0.588235, 0.0705882, 0.478431, 1 )
 border_width_left = 5
 border_width_top = 5
@@ -80,7 +80,7 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id=15]
+[sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 0.905882, 0.109804, 0.733333, 1 )
 border_width_left = 5
 border_width_top = 5
@@ -93,7 +93,7 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id=11]
+[sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 0.431373, 0.321569, 0.411765, 1 )
 border_width_left = 5
 border_width_top = 5
@@ -106,7 +106,7 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=14]
 bg_color = Color( 0.443137, 0.054902, 0.360784, 1 )
 border_width_left = 5
 border_width_top = 5
@@ -119,30 +119,30 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=15]
 bg_color = Color( 0.262745, 0.0470588, 0.219608, 0.627451 )
 
-[sub_resource type="StyleBoxTexture" id=7]
+[sub_resource type="StyleBoxTexture" id=16]
 texture = ExtResource( 10 )
 region_rect = Rect2( 0, 0, 210, 50 )
 modulate_color = Color( 0.639216, 0.0705882, 0.52549, 1 )
 
-[sub_resource type="StyleBoxTexture" id=8]
+[sub_resource type="StyleBoxTexture" id=17]
 texture = ExtResource( 11 )
 region_rect = Rect2( 0, 0, 210, 50 )
 modulate_color = Color( 0.639216, 0.0705882, 0.52549, 1 )
 
-[sub_resource type="StyleBoxTexture" id=5]
+[sub_resource type="StyleBoxTexture" id=18]
 texture = ExtResource( 10 )
 region_rect = Rect2( 0, 0, 210, 50 )
 modulate_color = Color( 0.0392157, 0.639216, 0.278431, 1 )
 
-[sub_resource type="StyleBoxTexture" id=6]
+[sub_resource type="StyleBoxTexture" id=19]
 texture = ExtResource( 11 )
 region_rect = Rect2( 0, 0, 210, 50 )
 modulate_color = Color( 0.0392157, 0.639216, 0.278431, 1 )
 
-[sub_resource type="StyleBoxFlat" id=22]
+[sub_resource type="StyleBoxFlat" id=20]
 bg_color = Color( 0.247059, 0.0313726, 0.2, 1 )
 border_width_left = 5
 border_width_right = 5
@@ -265,7 +265,7 @@ margin_bottom = 31.0
 rect_min_size = Vector2( 0, 31 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource( 4 )
+theme = SubResource( 1 )
 color = Color( 0.443137, 0.054902, 0.360784, 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/HP"]
@@ -299,7 +299,7 @@ margin_bottom = 21.0
 rect_min_size = Vector2( 120, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Hit Points"
 valign = 1
 
@@ -310,10 +310,10 @@ margin_bottom = 21.0
 rect_min_size = Vector2( 21, 21 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 16 )
-custom_styles/pressed = SubResource( 20 )
-custom_styles/disabled = SubResource( 13 )
-custom_styles/normal = SubResource( 14 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
 custom_colors/font_color = Color( 1, 0.117647, 0.811765, 1 )
 custom_colors/font_color_hover = Color( 0.996078, 0.423529, 0.0431373, 1 )
@@ -339,10 +339,10 @@ margin_right = 363.0
 margin_bottom = 21.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 17 )
-custom_styles/pressed = SubResource( 21 )
-custom_styles/disabled = SubResource( 18 )
-custom_styles/normal = SubResource( 19 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
 custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
 disabled = true
 text = "+"
@@ -354,7 +354,7 @@ margin_bottom = 21.0
 rect_min_size = Vector2( 155, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "$ 13543"
 align = 2
 valign = 1
@@ -366,7 +366,7 @@ margin_bottom = 72.0
 rect_min_size = Vector2( 0, 31 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource( 4 )
+theme = SubResource( 1 )
 color = Color( 0.443137, 0.054902, 0.360784, 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Speed"]
@@ -400,7 +400,7 @@ margin_bottom = 21.0
 rect_min_size = Vector2( 120, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Speed"
 valign = 1
 
@@ -411,10 +411,10 @@ margin_bottom = 21.0
 rect_min_size = Vector2( 21, 21 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 16 )
-custom_styles/pressed = SubResource( 20 )
-custom_styles/disabled = SubResource( 13 )
-custom_styles/normal = SubResource( 14 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
 custom_colors/font_color = Color( 1, 0.117647, 0.811765, 1 )
 custom_colors/font_color_hover = Color( 0.996078, 0.423529, 0.0431373, 1 )
@@ -440,10 +440,10 @@ margin_right = 363.0
 margin_bottom = 21.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 17 )
-custom_styles/pressed = SubResource( 21 )
-custom_styles/disabled = SubResource( 18 )
-custom_styles/normal = SubResource( 19 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
 custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
 disabled = true
 text = "+"
@@ -455,7 +455,7 @@ margin_bottom = 21.0
 rect_min_size = Vector2( 155, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "$ 13543"
 align = 2
 valign = 1
@@ -467,7 +467,7 @@ margin_bottom = 113.0
 rect_min_size = Vector2( 0, 31 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource( 4 )
+theme = SubResource( 1 )
 color = Color( 0.443137, 0.054902, 0.360784, 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Handling"]
@@ -501,7 +501,7 @@ margin_bottom = 21.0
 rect_min_size = Vector2( 120, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Handling"
 valign = 1
 
@@ -512,10 +512,10 @@ margin_bottom = 21.0
 rect_min_size = Vector2( 21, 21 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 16 )
-custom_styles/pressed = SubResource( 20 )
-custom_styles/disabled = SubResource( 13 )
-custom_styles/normal = SubResource( 14 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
 custom_colors/font_color = Color( 1, 0.117647, 0.811765, 1 )
 custom_colors/font_color_hover = Color( 0.996078, 0.423529, 0.0431373, 1 )
@@ -541,10 +541,10 @@ margin_right = 363.0
 margin_bottom = 21.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 17 )
-custom_styles/pressed = SubResource( 21 )
-custom_styles/disabled = SubResource( 18 )
-custom_styles/normal = SubResource( 19 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
 custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
 disabled = true
 text = "+"
@@ -556,7 +556,7 @@ margin_bottom = 21.0
 rect_min_size = Vector2( 155, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "$ 13543"
 align = 2
 valign = 1
@@ -568,7 +568,7 @@ margin_bottom = 154.0
 rect_min_size = Vector2( 0, 31 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource( 4 )
+theme = SubResource( 1 )
 color = Color( 0.443137, 0.054902, 0.360784, 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Damage"]
@@ -602,7 +602,7 @@ margin_bottom = 21.0
 rect_min_size = Vector2( 120, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Damage"
 valign = 1
 
@@ -613,10 +613,10 @@ margin_bottom = 21.0
 rect_min_size = Vector2( 21, 21 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 16 )
-custom_styles/pressed = SubResource( 20 )
-custom_styles/disabled = SubResource( 13 )
-custom_styles/normal = SubResource( 14 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
 custom_colors/font_color = Color( 1, 0.117647, 0.811765, 1 )
 custom_colors/font_color_hover = Color( 0.996078, 0.423529, 0.0431373, 1 )
@@ -642,10 +642,10 @@ margin_right = 363.0
 margin_bottom = 21.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 17 )
-custom_styles/pressed = SubResource( 21 )
-custom_styles/disabled = SubResource( 18 )
-custom_styles/normal = SubResource( 19 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
 custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
 disabled = true
 text = "+"
@@ -657,7 +657,7 @@ margin_bottom = 21.0
 rect_min_size = Vector2( 155, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "$ 13543"
 align = 2
 valign = 1
@@ -669,7 +669,7 @@ margin_bottom = 195.0
 rect_min_size = Vector2( 0, 31 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource( 4 )
+theme = SubResource( 1 )
 color = Color( 0.443137, 0.054902, 0.360784, 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/RoF"]
@@ -703,7 +703,7 @@ margin_bottom = 21.0
 rect_min_size = Vector2( 120, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Rate of Fire"
 valign = 1
 
@@ -714,10 +714,10 @@ margin_bottom = 21.0
 rect_min_size = Vector2( 21, 21 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 16 )
-custom_styles/pressed = SubResource( 20 )
-custom_styles/disabled = SubResource( 13 )
-custom_styles/normal = SubResource( 14 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
 custom_colors/font_color = Color( 1, 0.117647, 0.811765, 1 )
 custom_colors/font_color_hover = Color( 0.996078, 0.423529, 0.0431373, 1 )
@@ -743,10 +743,10 @@ margin_right = 363.0
 margin_bottom = 21.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 17 )
-custom_styles/pressed = SubResource( 21 )
-custom_styles/disabled = SubResource( 18 )
-custom_styles/normal = SubResource( 19 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
 custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
 disabled = true
 text = "+"
@@ -758,7 +758,7 @@ margin_bottom = 21.0
 rect_min_size = Vector2( 155, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "$ 13543"
 align = 2
 valign = 1
@@ -770,7 +770,7 @@ margin_bottom = 236.0
 rect_min_size = Vector2( 0, 31 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource( 4 )
+theme = SubResource( 1 )
 color = Color( 0.443137, 0.054902, 0.360784, 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeShip/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Magnet"]
@@ -804,7 +804,7 @@ margin_bottom = 21.0
 rect_min_size = Vector2( 120, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Magnet"
 valign = 1
 
@@ -815,10 +815,10 @@ margin_bottom = 21.0
 rect_min_size = Vector2( 21, 21 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 16 )
-custom_styles/pressed = SubResource( 20 )
-custom_styles/disabled = SubResource( 13 )
-custom_styles/normal = SubResource( 14 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
 custom_colors/font_color = Color( 1, 0.117647, 0.811765, 1 )
 custom_colors/font_color_hover = Color( 0.996078, 0.423529, 0.0431373, 1 )
@@ -844,10 +844,10 @@ margin_right = 363.0
 margin_bottom = 21.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 17 )
-custom_styles/pressed = SubResource( 21 )
-custom_styles/disabled = SubResource( 18 )
-custom_styles/normal = SubResource( 19 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
 custom_colors/font_color_disabled = Color( 0.301961, 0.227451, 0.290196, 1 )
 disabled = true
 text = "+"
@@ -859,7 +859,7 @@ margin_bottom = 21.0
 rect_min_size = Vector2( 155, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "$ 13543"
 align = 2
 valign = 1
@@ -1071,10 +1071,10 @@ margin_right = 156.0
 margin_bottom = 50.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 12 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
 custom_colors/font_color_disabled = Color( 0.3, 0.225, 0.28625, 1 )
 custom_colors/font_color = Color( 1, 0.12, 0.809333, 1 )
 custom_colors/font_color_hover = Color( 0.996078, 0.470588, 0.117647, 1 )
@@ -1086,10 +1086,10 @@ margin_right = 337.0
 margin_bottom = 50.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 12 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
 custom_colors/font_color_disabled = Color( 0.3, 0.225, 0.28625, 1 )
 custom_colors/font_color = Color( 1, 0.12, 0.809333, 1 )
 custom_colors/font_color_hover = Color( 0.996078, 0.470588, 0.117647, 1 )
@@ -1102,10 +1102,10 @@ margin_right = 518.0
 margin_bottom = 50.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 12 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
 custom_colors/font_color_disabled = Color( 0.3, 0.225, 0.28625, 1 )
 custom_colors/font_color = Color( 1, 0.12, 0.809333, 1 )
 custom_colors/font_color_hover = Color( 0.996078, 0.470588, 0.117647, 1 )
@@ -1118,10 +1118,10 @@ margin_right = 156.0
 margin_bottom = 125.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 12 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
 custom_colors/font_color_disabled = Color( 0.3, 0.225, 0.28625, 1 )
 custom_colors/font_color = Color( 1, 0.12, 0.809333, 1 )
 custom_colors/font_color_hover = Color( 0.996078, 0.470588, 0.117647, 1 )
@@ -1135,10 +1135,10 @@ margin_right = 337.0
 margin_bottom = 125.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 12 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
 custom_colors/font_color_disabled = Color( 0.3, 0.225, 0.28625, 1 )
 custom_colors/font_color = Color( 1, 0.12, 0.809333, 1 )
 custom_colors/font_color_hover = Color( 0.996078, 0.470588, 0.117647, 1 )
@@ -1152,10 +1152,10 @@ margin_right = 518.0
 margin_bottom = 125.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 12 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
 custom_colors/font_color_disabled = Color( 0.3, 0.225, 0.28625, 1 )
 custom_colors/font_color = Color( 1, 0.12, 0.809333, 1 )
 custom_colors/font_color_hover = Color( 0.996078, 0.470588, 0.117647, 1 )
@@ -1168,10 +1168,10 @@ margin_right = 156.0
 margin_bottom = 200.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 12 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
 custom_colors/font_color_disabled = Color( 0.3, 0.225, 0.28625, 1 )
 custom_colors/font_color = Color( 1, 0.12, 0.809333, 1 )
 custom_colors/font_color_hover = Color( 0.996078, 0.470588, 0.117647, 1 )
@@ -1185,10 +1185,10 @@ margin_right = 337.0
 margin_bottom = 200.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 12 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
 custom_colors/font_color_disabled = Color( 0.3, 0.225, 0.28625, 1 )
 custom_colors/font_color = Color( 1, 0.12, 0.809333, 1 )
 custom_colors/font_color_hover = Color( 0.996078, 0.470588, 0.117647, 1 )
@@ -1202,10 +1202,10 @@ margin_right = 518.0
 margin_bottom = 200.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 12 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
 custom_colors/font_color_disabled = Color( 0.3, 0.225, 0.28625, 1 )
 custom_colors/font_color = Color( 1, 0.12, 0.809333, 1 )
 custom_colors/font_color_hover = Color( 0.996078, 0.470588, 0.117647, 1 )
@@ -1228,7 +1228,7 @@ margin_right = 520.0
 margin_bottom = 21.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-custom_styles/normal = SubResource( 10 )
+custom_styles/normal = SubResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1239,7 +1239,8 @@ margin_right = 520.0
 margin_bottom = 201.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
-custom_styles/normal = SubResource( 10 )
+custom_styles/normal = SubResource( 15 )
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1269,8 +1270,8 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 210, 50 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 7 )
-custom_styles/normal = SubResource( 8 )
+custom_styles/hover = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
 text = "Main menu"
 
 [node name="btnLaunch" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/HBoxContainer"]
@@ -1280,8 +1281,8 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 210, 50 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 5 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 18 )
+custom_styles/normal = SubResource( 19 )
 disabled = true
 text = "Launch"
 
@@ -1292,7 +1293,7 @@ margin_left = -75.0
 margin_right = 75.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 150, 40 )
-custom_styles/normal = SubResource( 22 )
+custom_styles/normal = SubResource( 20 )
 text = "Cash: $ 0"
 align = 1
 valign = 1
