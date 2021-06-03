@@ -71,6 +71,8 @@ func fireGuns():
 	for i in range(1, noOfGuns+1):
 		var bullet = plBullet1.instance()
 		bullet.position = get_node("Guns/Gun" + str(i)).global_position
+		bullet.playerBullet = true
+		bullet.bulletDamage = playerStats["shipDamage"]
 		get_parent().add_child(bullet)
 		
 	rofTimer.start()
