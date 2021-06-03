@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Levels/levels.gd" type="Script" id=1]
 [ext_resource path="res://GUI/levelGui.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Levels/Backgrounds/space1.png" type="Texture" id=3]
+[ext_resource path="res://Levels/Backgrounds/space1.webp" type="Texture" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Enemies/Spawner.tscn" type="PackedScene" id=5]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Menus/Mainmenu.gd" type="Script" id=1]
-[ext_resource path="res://Menus/titlescreen.png" type="Texture" id=2]
+[ext_resource path="res://Menus/titlescreen.webp" type="Texture" id=2]
 [ext_resource path="res://Assets/Fonts/BasicFont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/Fonts/TitleFont.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Assets/music/mainmenu.ogg" type="AudioStream" id=5]

@@ -20,7 +20,7 @@ func move(delta) -> void:
 	collision = move_and_collide(Vector2.DOWN * Speed * delta)
 
 func shoot():
-	if rofTimer.is_stopped():
+	if rofTimer.is_stopped() and RoF > 0:
 		for gun in $Guns.get_children():
 			var bullet = psBullet.instance()
 			bullet.position = gun.global_position

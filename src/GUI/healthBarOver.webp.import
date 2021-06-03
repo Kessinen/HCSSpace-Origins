@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/loot1.png-29b225899b5463405d22134b27ab3893.stex"
+path="res://.import/healthBarOver.webp-643a36f5c0ef8e7903e227faf2515f18.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Loot/loot1.png"
-dest_files=[ "res://.import/loot1.png-29b225899b5463405d22134b27ab3893.stex" ]
+source_file="res://GUI/healthBarOver.webp"
+dest_files=[ "res://.import/healthBarOver.webp-643a36f5c0ef8e7903e227faf2515f18.stex" ]
 
 [params]
 

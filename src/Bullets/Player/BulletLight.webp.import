@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gunship1.png-42467f930dee286bb51b550c4929468c.stex"
+path="res://.import/BulletLight.webp-4c2c3c2a256284049f7016960681aea0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/Gunship1/gunship1.png"
-dest_files=[ "res://.import/gunship1.png-42467f930dee286bb51b550c4929468c.stex" ]
+source_file="res://Bullets/Player/BulletLight.webp"
+dest_files=[ "res://.import/BulletLight.webp-4c2c3c2a256284049f7016960681aea0.stex" ]
 
 [params]
 

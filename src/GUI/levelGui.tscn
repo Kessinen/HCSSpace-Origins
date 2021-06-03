@@ -2,11 +2,11 @@
 
 [ext_resource path="res://GUI/levelGui.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/BasicFont.tres" type="DynamicFont" id=2]
-[ext_resource path="res://GUI/healthBarOver.png" type="Texture" id=3]
-[ext_resource path="res://GUI/healthBar.png" type="Texture" id=4]
-[ext_resource path="res://GUI/healthBarSquare.png" type="Texture" id=5]
-[ext_resource path="res://GUI/healthBarUnder.png" type="Texture" id=6]
-[ext_resource path="res://GUI/moneyBarOver.png" type="Texture" id=7]
+[ext_resource path="res://GUI/healthBarOver.webp" type="Texture" id=3]
+[ext_resource path="res://GUI/healthBar.webp" type="Texture" id=4]
+[ext_resource path="res://GUI/healthBarSquare.webp" type="Texture" id=5]
+[ext_resource path="res://GUI/healthBarUnder.webp" type="Texture" id=6]
+[ext_resource path="res://GUI/moneyBarOver.webp" type="Texture" id=7]
 
 [node name="Gui" type="Control"]
 anchor_right = 1.0
@@ -19,7 +19,8 @@ __meta__ = {
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
-margin_right = 550.0
+margin_left = 0.420441
+margin_right = 550.42
 margin_bottom = 96.0
 custom_constants/margin_top = 20
 custom_constants/margin_left = 20

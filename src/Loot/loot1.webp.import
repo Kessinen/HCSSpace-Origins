@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/healthBarSquare.png-e29e9cd452065367fb66834bd964b198.stex"
+path="res://.import/loot1.webp-21b93a36909d95e5b14fc030e09f49c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GUI/healthBarSquare.png"
-dest_files=[ "res://.import/healthBarSquare.png-e29e9cd452065367fb66834bd964b198.stex" ]
+source_file="res://Loot/loot1.webp"
+dest_files=[ "res://.import/loot1.webp-21b93a36909d95e5b14fc030e09f49c0.stex" ]
 
 [params]
 

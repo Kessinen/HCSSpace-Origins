@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BulletLight.png-eb93d34f8de350a0769289f6170cc4a4.stex"
+path="res://.import/healthBar.webp-7b3331c5bd57787a6cf9d15344c4270e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bullets/Player/BulletLight.png"
-dest_files=[ "res://.import/BulletLight.png-eb93d34f8de350a0769289f6170cc4a4.stex" ]
+source_file="res://GUI/healthBar.webp"
+dest_files=[ "res://.import/healthBar.webp-7b3331c5bd57787a6cf9d15344c4270e.stex" ]
 
 [params]
 

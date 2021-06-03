@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/moneyBarOver.png-43e164a46b476db1be62bc03b0c9abec.stex"
+path="res://.import/asteroid.webp-96b06cde4ed5ee5299bb7a901470b53b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GUI/moneyBarOver.png"
-dest_files=[ "res://.import/moneyBarOver.png-43e164a46b476db1be62bc03b0c9abec.stex" ]
+source_file="res://Enemies/Asteroid/asteroid.webp"
+dest_files=[ "res://.import/asteroid.webp-96b06cde4ed5ee5299bb7a901470b53b.stex" ]
 
 [params]
 
