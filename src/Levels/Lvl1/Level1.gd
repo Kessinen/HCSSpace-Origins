@@ -2,8 +2,7 @@ extends "res://Levels/levels.gd"
 
 func _ready():
 	$EnemySpawner.spawnEnemy("Asteroid",20)
-	levelNumber = 1
-
+	
 func _process(delta):
 	checkLevelStatus()
 
