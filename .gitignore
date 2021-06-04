@@ -13,3 +13,5 @@ data_*/
 assets/*
 bin/*
 src/Assets/music/*
+*.ogg
+*.ogg.import
