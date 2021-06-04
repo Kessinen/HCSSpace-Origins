@@ -6,6 +6,7 @@ var Score : int = 0
 onready var origEngineLifetime : float = $Engines/left.lifetime
 onready var origEngineVelocity : float =  $Engines/left.process_material.get("initial_velocity")
 onready var playerStats = get_node("/root/playerStats").playerData
+onready var upgradeMaxValues = get_node("/root/playerStats").upgradeMaxValues
 
 var curHP : int
 var velocity = Vector2.ZERO
@@ -19,30 +20,36 @@ signal hpChanged(newValue)
 signal IDied()
 
 func _ready():
-	curHP = playerStats["shipHP"]
-	rofTimer.wait_time = 1 - (float(playerStats["shipRoF"]) * 0.099)
+	curHP = int(range_lerp(playerStats["shipHP"],1,10,1,upgradeMaxValues["HP"]))
+	rofTimer.wait_time = range_lerp(playerStats["shipRoF"],1,10,1.0,upgradeMaxValues["RoF"])
 	if playerStats["skill1"]:
 		$Guns/Gun1.position.x = -20
 		noOfGuns = 2
 
-
 func _physics_process(delta):
-	
 	moveShip()
-	
 	if Input.is_action_pressed("shoot"):
 		fireGuns()
-
+	if Input.is_action_just_pressed("move_up"):
+		$Tween.interpolate_property($EngineActive,"volume_db",-80,-10,0.05,Tween.TRANS_LINEAR,Tween.EASE_IN)
+		$Tween.start()
+	if Input.is_action_just_released("move_up"):
+		var curVol = $EngineActive.volume_db
+		$Tween.interpolate_property($EngineActive,"volume_db",curVol,-80,0.05,Tween.TRANS_LINEAR,Tween.EASE_IN)
+		$Tween.start()
+	
 func moveShip():
 	var input_vector : Vector2
 	var accelerate := int(Input.get_action_strength("move_down") - Input.get_action_strength("move_up"))
 	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	input_vector = input_vector.normalized()
+	var handling = range_lerp(playerStats["shipHandling"],1,10,1,100)
+	var speed = range_lerp(playerStats["shipSpeed"],1,10,1,500)
 	if input_vector != Vector2.ZERO:
-		velocity = velocity.move_toward(input_vector * playerStats["shipSpeed"] * 100, playerStats["shipHandling"] * 1.5)
+		velocity = velocity.move_toward(input_vector * speed, handling)
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, playerStats["shipHandling"])
+		velocity = velocity.move_toward(Vector2.ZERO, handling)
 	velocity = move_and_slide(velocity)
 	
 	#Engine exhaust power
@@ -72,8 +79,9 @@ func fireGuns():
 		var bullet = plBullet1.instance()
 		bullet.position = get_node("Guns/Gun" + str(i)).global_position
 		bullet.playerBullet = true
-		bullet.bulletDamage = playerStats["shipDamage"]
+		bullet.bulletDamage = range_lerp(playerStats["shipDamage"],1,10,1,20)
 		get_parent().add_child(bullet)
+		$Gun.play()
 		
 	rofTimer.start()
 
@@ -81,9 +89,10 @@ func takeDamage(amount : int):
 	curHP -= amount
 	if curHP < 0: 
 		curHP = 0
-	emit_signal("hpChanged", curHP)
 	if curHP <= 0:
 		die()
+	print(curHP)
+	emit_signal("hpChanged", curHP)
 
 func die():
 	Score = 0

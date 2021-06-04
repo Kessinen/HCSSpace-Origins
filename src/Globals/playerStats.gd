@@ -15,6 +15,7 @@ var playerData = {
 	"skill2" : false,
 	"skill3" : false
 }
+
 var upgradeCostMultiplier = {
 	"HP" : 1.5,
 	"Shields" : 1,
@@ -24,6 +25,17 @@ var upgradeCostMultiplier = {
 	"Magnet" : 1.5,
 	"Speed" : 1.3,
 }
+
+var upgradeMaxValues = {
+	"HP" : 50,
+	"Shields" : 1,
+	"RoF" : 0.2,
+	"Damage" : 20,
+	"Handling" : 100,
+	"Magnet" : 200,
+	"Speed" : 500,
+}
+
 var upgradeBasePrices = {
 	"HP" : 100,
 	"Shields" : 1,

@@ -4,7 +4,7 @@ HCSpace Origins is a top down space shooter intended as a way for me to learn ma
 ## Legal Stuff
 A few pointers. This gamecode comes without any warranty. Try this at your own risk and don't come complaining if your computer explodes in a huge fireball.
 
-Secondly, Due to licencing, I cannot include any music in the repository. Binaries will have audio where implemented.
+Secondly, Due to licencing, I cannot include any music or sound effects in the repository. Binaries will have audio where implemented.
 
 ## Download section
 Latest builds can be downloaded from here:

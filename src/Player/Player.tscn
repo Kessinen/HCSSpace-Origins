@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/player.webp" type="Texture" id=2]
+[ext_resource path="res://Player/Sfx/engineActive.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Bullets/Sfx/gun1.ogg" type="AudioStream" id=4]
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 0.757812, 0.858093, 1, 1, 1, 0.749756, 0.359375, 1 )
@@ -97,6 +99,17 @@ position = Vector2( 0, -28.59 )
 
 [node name="Gun2" type="Position2D" parent="Guns"]
 position = Vector2( 20, -28.59 )
+
+[node name="EngineActive" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -80.0
+autoplay = true
+
+[node name="Gun" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+pitch_scale = 4.0
+
+[node name="Tween" type="Tween" parent="."]
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
 [connection signal="body_entered" from="Magnet" to="." method="_on_Magnet_body_entered"]
