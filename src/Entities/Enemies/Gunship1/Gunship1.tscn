@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Enemies/Gunship1/Gunship1.gd" type="Script" id=1]
-[ext_resource path="res://Enemies/Gunship1/gunship1.webp" type="Texture" id=2]
+[ext_resource path="res://Entities/Enemies/Gunship1/Gunship1.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Enemies/Gunship1/gunship1.webp" type="Texture" id=2]
 [ext_resource path="res://Bullets/Bullet2/Bullet2.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]

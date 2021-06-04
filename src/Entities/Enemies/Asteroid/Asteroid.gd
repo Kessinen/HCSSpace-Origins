@@ -1,4 +1,4 @@
-extends "res://Enemies/enemies.gd"
+extends "res://Entities/Enemies/enemies.gd"
 
 export (float) var minRotationSpeed : float = 1
 export (float) var maxRotationSpeed : float = 10
@@ -10,7 +10,7 @@ var RotationSpeed : float
 
 var velocity : Vector2 = Vector2.DOWN
 var rotateDirection := 1
-var plAsteroid = preload("res://Enemies/Asteroid/miniAsteroid.tscn")
+var plAsteroid = preload("res://Entities/Enemies/Asteroid/miniAsteroid.tscn")
 
 func _ready():
 	randomize()

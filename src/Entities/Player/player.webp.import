@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/asteroid.webp-96b06cde4ed5ee5299bb7a901470b53b.stex"
+path="res://.import/player.webp-6061b959ec5b7a0fa74185be2fc63af0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/Asteroid/asteroid.webp"
-dest_files=[ "res://.import/asteroid.webp-96b06cde4ed5ee5299bb7a901470b53b.stex" ]
+source_file="res://Entities/Player/player.webp"
+dest_files=[ "res://.import/player.webp-6061b959ec5b7a0fa74185be2fc63af0.stex" ]
 
 [params]
 

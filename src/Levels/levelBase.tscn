@@ -3,8 +3,8 @@
 [ext_resource path="res://Levels/levels.gd" type="Script" id=1]
 [ext_resource path="res://GUI/levelGui.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/Backgrounds/space1.webp" type="Texture" id=3]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Enemies/Spawner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Entities/Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Entities/Enemies/Spawner.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 360 )

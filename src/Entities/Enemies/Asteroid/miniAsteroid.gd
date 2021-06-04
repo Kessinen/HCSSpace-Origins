@@ -1,4 +1,4 @@
-extends "res://Enemies/enemies.gd"
+extends "res://Entities/Enemies/enemies.gd"
 
 export (float) var minRotationSpeed : float = 1
 export (float) var maxRotationSpeed : float = 10
