@@ -45,7 +45,7 @@ func moveShip():
 	input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	input_vector = input_vector.normalized()
 	var handling = range_lerp(playerStats["shipHandling"],1,10,1,upgradeMaxValues["Handling"])
-	var speed = range_lerp(playerStats["shipSpeed"],1,10,1,upgradeMaxValues["Speed"])
+	var speed = range_lerp(playerStats["shipSpeed"],1,10,100,upgradeMaxValues["Speed"])
 	if input_vector != Vector2.ZERO:
 		velocity = velocity.move_toward(input_vector * speed, handling)
 	else:
