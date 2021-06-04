@@ -44,8 +44,8 @@ func moveShip():
 	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	input_vector = input_vector.normalized()
-	var handling = range_lerp(playerStats["shipHandling"],1,10,1,100)
-	var speed = range_lerp(playerStats["shipSpeed"],1,10,1,500)
+	var handling = range_lerp(playerStats["shipHandling"],1,10,1,upgradeMaxValues["Handling"])
+	var speed = range_lerp(playerStats["shipSpeed"],1,10,1,upgradeMaxValues["Speed"])
 	if input_vector != Vector2.ZERO:
 		velocity = velocity.move_toward(input_vector * speed, handling)
 	else:
@@ -79,7 +79,7 @@ func fireGuns():
 		var bullet = plBullet1.instance()
 		bullet.position = get_node("Guns/Gun" + str(i)).global_position
 		bullet.playerBullet = true
-		bullet.bulletDamage = range_lerp(playerStats["shipDamage"],1,10,1,20)
+		bullet.bulletDamage = range_lerp(playerStats["shipDamage"],1,10,1,upgradeMaxValues["Damage"])
 		get_parent().add_child(bullet)
 		$Gun.play()
 		
