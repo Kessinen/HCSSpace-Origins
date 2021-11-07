@@ -27,6 +27,7 @@ func _ready():
 	if playerStats["skill1"]:
 		$Guns/Gun1.position.x = -20
 		noOfGuns = 2
+	$Magnet/CollisionShape2D.shape.radius = playerStats["shipMagnet"] * 20
 
 func _physics_process(delta):
 	moveShip()
@@ -34,7 +35,6 @@ func _physics_process(delta):
 		fireGuns()
 	
 func moveShip():
-	
 	if Input.is_action_pressed("move_up"):
 		statemachine.travel("Accelerate")
 	elif Input.is_action_pressed("move_down"):
@@ -83,7 +83,7 @@ func die():
 func _on_Magnet_body_entered(body):
 	if body.is_in_group("Loot"):
 		Score += body.lootValue
-		body.queue_free()
+		body.pickUp(global_position)
 		emit_signal("lootChanged",Score)
 
 func _exit_tree():

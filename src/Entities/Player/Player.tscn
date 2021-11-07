@@ -40,49 +40,51 @@ extents = Vector2( 30.3297, 21.5013 )
 extents = Vector2( 33.6933, 24.8649 )
 
 [sub_resource type="CircleShape2D" id=8]
-radius = 23.1867
+radius = 150.0
 
 [sub_resource type="Animation" id=9]
 resource_name = "Accelerate"
 length = 0.01
 loop = true
 step = 0.01
-tracks/0/type = "audio"
-tracks/0/path = NodePath("EngineActive")
+tracks/0/type = "value"
+tracks/0/path = NodePath("EngineActive:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = false
+tracks/0/enabled = true
 tracks/0/keys = {
-"clips": [  ],
-"times": PoolRealArray(  )
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("EngineActive:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
 "times": PoolRealArray( -0.14 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("EngineActive:volume_db")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
+tracks/1/type = "value"
+tracks/1/path = NodePath("EngineActive:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
 "times": PoolRealArray( 0, 5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Engines/right:lifetime")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2.0 ]
+}
 tracks/3/type = "value"
-tracks/3/path = NodePath("Engines/right:lifetime")
+tracks/3/path = NodePath("Engines/left:lifetime")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -94,7 +96,7 @@ tracks/3/keys = {
 "values": [ 2.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Engines/left:lifetime")
+tracks/4/path = NodePath("Engines/left:speed_scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -103,27 +105,15 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 2.0 ]
+"values": [ 8.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Engines/left:speed_scale")
+tracks/5/path = NodePath("Engines/right:speed_scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 8.0 ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("Engines/right:speed_scale")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -422,7 +412,6 @@ collision_layer = 2
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Magnet"]
-visible = false
 shape = SubResource( 8 )
 
 [node name="Guns" type="Node2D" parent="."]
