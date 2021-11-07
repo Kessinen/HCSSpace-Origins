@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Entities/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Entities/Player/player.webp" type="Texture" id=2]
@@ -218,6 +218,50 @@ tracks/6/keys = {
 "values": [ 1.0 ]
 }
 
+[sub_resource type="Animation" id=21]
+resource_name = "Die"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("EngineActive:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "IDied" ],
+"method": "emit_signal"
+} ]
+}
+
 [sub_resource type="Animation" id=10]
 resource_name = "Idle"
 length = 0.1
@@ -300,6 +344,9 @@ animation = "Accelerate"
 [sub_resource type="AnimationNodeAnimation" id=16]
 animation = "Deaccelerate"
 
+[sub_resource type="AnimationNodeAnimation" id=22]
+animation = "Die"
+
 [sub_resource type="AnimationNodeAnimation" id=14]
 animation = "Idle"
 
@@ -311,15 +358,20 @@ animation = "Idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=20]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
 [sub_resource type="AnimationNodeStateMachine" id=11]
 states/Accelerate/node = SubResource( 13 )
 states/Accelerate/position = Vector2( 760, 142 )
 states/Deaccelerate/node = SubResource( 16 )
 states/Deaccelerate/position = Vector2( 639, 324 )
+states/Die/node = SubResource( 22 )
+states/Die/position = Vector2( 411, 121 )
 states/Idle/node = SubResource( 14 )
 states/Idle/position = Vector2( 414, 242 )
-transitions = [ "Idle", "Accelerate", SubResource( 17 ), "Accelerate", "Idle", SubResource( 18 ), "Idle", "Deaccelerate", SubResource( 19 ), "Deaccelerate", "Idle", SubResource( 20 ) ]
+transitions = [ "Idle", "Accelerate", SubResource( 17 ), "Accelerate", "Idle", SubResource( 18 ), "Idle", "Deaccelerate", SubResource( 19 ), "Deaccelerate", "Idle", SubResource( 20 ), "Idle", "Die", SubResource( 23 ) ]
 start_node = "Idle"
+end_node = "Die"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=12]
 
@@ -394,6 +446,7 @@ pitch_scale = 4.0
 autoplay = "Idle"
 anims/Accelerate = SubResource( 9 )
 anims/Deaccelerate = SubResource( 15 )
+anims/Die = SubResource( 21 )
 anims/Idle = SubResource( 10 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]

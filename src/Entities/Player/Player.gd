@@ -11,6 +11,7 @@ onready var upgradeMaxValues = get_node("/root/playerStats").upgradeMaxValues
 var curHP : int
 var velocity = Vector2.ZERO
 var noOfGuns = 1
+
 onready var rofTimer = $rofTimer
 onready var plBullet1 = preload("res://Bullets/Player/Bullet1.tscn")
 onready var plDied = preload("res://GUI/stageLost.tscn")
@@ -73,13 +74,11 @@ func takeDamage(amount : int):
 		curHP = 0
 	if curHP <= 0:
 		die()
-	print(curHP)
 	emit_signal("hpChanged", curHP)
 
 func die():
 	Score = 0
-	emit_signal("IDied")
-	queue_free()
+	$AnimationPlayer.play("Die")
 
 func _on_Magnet_body_entered(body):
 	if body.is_in_group("Loot"):
