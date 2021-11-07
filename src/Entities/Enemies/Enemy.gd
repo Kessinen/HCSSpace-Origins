@@ -6,11 +6,19 @@ export (int) var maxLoot : int = 10
 export (int) var Speed : int = 30
 export (int) var enemyLevel : int = 1
 export (int) var damageAmount : int = 1
-export (int) var RoF : int = 1
+export (int) var RoF : int = 0
+
+export (PackedScene) var psBullet
 
 onready var HP = HPBase * enemyLevel
+var rofTimer = Timer.new()
 
 var plLoot = preload("res://Loot/Loot.tscn")
+
+func _ready():
+	rofTimer.wait_time = RoF
+	rofTimer.one_shot = true
+	add_child(rofTimer)
 
 func takeDamage(amount):
 	if amount > Shields:
@@ -34,4 +42,7 @@ func spawnLoot():
 
 func die():
 	spawnLoot()
+	queue_free()
+
+func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()

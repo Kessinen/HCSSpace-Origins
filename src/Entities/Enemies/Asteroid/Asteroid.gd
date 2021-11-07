@@ -1,4 +1,4 @@
-extends "res://Entities/Enemies/enemies.gd"
+extends "res://Entities/Enemies/Enemy.gd"
 
 export (float) var minRotationSpeed : float = 1
 export (float) var maxRotationSpeed : float = 10
@@ -15,21 +15,21 @@ var plAsteroid = preload("res://Entities/Enemies/Asteroid/miniAsteroid.tscn")
 func _ready():
 	randomize()
 	RotationSpeed = rand_range(minRotationSpeed, maxRotationSpeed) / 10
-	$sprite.rotation_degrees = rand_range(0,360)
+	$Sprite.rotation_degrees = rand_range(0,360)
 	var rotateDirections := [-1,1]
 	rotateDirection = rotateDirections[round(rand_range(0,1))]
 	Speed = rand_range(minSpeed, maxSpeed)
 
 func _physics_process(delta):
-	$sprite.rotate(RotationSpeed * delta * rotateDirection)
+	$Sprite.rotate(RotationSpeed * delta * rotateDirection)
 	position.y = position.y + Speed * delta
 
 func die():
 	for i in range(enemyLevel * 2):
-		spawnChild()
+		spawnChildren()
 	.die()
 
-func spawnChild():
+func spawnChildren():
 	var enemy = plAsteroid.instance()
 	enemy.position = global_position
 	get_parent().call_deferred("add_child", enemy)

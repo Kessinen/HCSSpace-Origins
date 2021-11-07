@@ -1,13 +1,4 @@
-extends "res://Enemies/enemies.gd"
-
-var rofTimer = Timer.new()
-
-export (PackedScene) var psBullet
-
-func _ready():
-	rofTimer.wait_time = RoF
-	rofTimer.one_shot = true
-	add_child(rofTimer)
+extends "res://Entities/Enemies/Enemy.gd"
 
 func _physics_process(delta):
 	move(delta)
@@ -27,6 +18,3 @@ func shoot():
 			bullet.rotation = deg2rad(180)
 			get_parent().add_child(bullet)
 		rofTimer.start()
-
-func _on_VisibilityNotifier2D_screen_exited():
-	queue_free()

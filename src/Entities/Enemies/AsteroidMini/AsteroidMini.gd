@@ -24,6 +24,3 @@ func _ready():
 func _physics_process(delta):
 	move_and_slide(Vector2.DOWN.rotated(rotation) * Speed)
 	$sprite.rotate((float(RotationSpeed) / 10) * delta * rotateDirection)
-
-func _on_VisibilityNotifier2D_screen_exited():
-	queue_free()

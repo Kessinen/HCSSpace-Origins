@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gunship1.webp-687e5972e1b9fff573889791db83d48f.stex"
+path="res://.import/gunship.webp-538643403adea4ded783609d639c7d01.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Enemies/Gunship1/gunship1.webp"
-dest_files=[ "res://.import/gunship1.webp-687e5972e1b9fff573889791db83d48f.stex" ]
+source_file="res://Entities/Sprites/gunship.webp"
+dest_files=[ "res://.import/gunship.webp-538643403adea4ded783609d639c7d01.stex" ]
 
 [params]
 
