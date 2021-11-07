@@ -41,8 +41,7 @@ func spawnLoot():
 	get_parent().call_deferred("add_child",loot)
 
 func die():
-	spawnLoot()
-	queue_free()
+	$AnimationPlayer.play("Die")
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()

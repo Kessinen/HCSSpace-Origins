@@ -12,7 +12,7 @@ onready var maxSpeed : float = Speed * 1.5
 func _ready():
 	randomize()
 	RotationSpeed = rand_range(minRotationSpeed, maxRotationSpeed) / 10
-	$sprite.rotation_degrees = rand_range(0,360)
+	$Sprite.rotation_degrees = rand_range(0,360)
 	var rotateDirections := [-1,1]
 	rotateDirection = rotateDirections[round(rand_range(0,1))]
 	
@@ -23,4 +23,4 @@ func _ready():
 	
 func _physics_process(delta):
 	move_and_slide(Vector2.DOWN.rotated(rotation) * Speed)
-	$sprite.rotate((float(RotationSpeed) / 10) * delta * rotateDirection)
+	$Sprite.rotate((float(RotationSpeed) / 10) * delta * rotateDirection)

@@ -10,7 +10,7 @@ var RotationSpeed : float
 
 var velocity : Vector2 = Vector2.DOWN
 var rotateDirection := 1
-var plAsteroid = preload("res://Entities/Enemies/Asteroid/miniAsteroid.tscn")
+var plAsteroid = preload("res://Entities/Enemies/AsteroidMini/AsteroidMini.tscn")
 
 func _ready():
 	randomize()
