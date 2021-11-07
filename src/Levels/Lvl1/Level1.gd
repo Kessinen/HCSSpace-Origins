@@ -2,6 +2,7 @@ extends "res://Levels/levels.gd"
 
 func _ready():
 	$EnemySpawner.spawnEnemy("Asteroid",20)
+	MusicController.changeMusic("Stage1")
 	
 func _process(delta):
 	checkLevelStatus()

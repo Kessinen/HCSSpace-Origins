@@ -21,6 +21,7 @@ var descriptions = [
 	]
 
 func _ready():
+	MusicController.changeMusic("Mainmenu")
 	updateGui()
 	updateShopButtons()
 	gameFunctions.saveGameData()
