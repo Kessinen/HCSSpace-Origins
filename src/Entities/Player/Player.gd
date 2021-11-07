@@ -14,6 +14,7 @@ var noOfGuns = 1
 onready var rofTimer = $rofTimer
 onready var plBullet1 = preload("res://Bullets/Player/Bullet1.tscn")
 onready var plDied = preload("res://GUI/stageLost.tscn")
+onready var statemachine = $AnimationTree.get("parameters/playback")
 
 signal lootChanged(newValue)
 signal hpChanged(newValue)
@@ -30,15 +31,15 @@ func _physics_process(delta):
 	moveShip()
 	if Input.is_action_pressed("shoot"):
 		fireGuns()
-	if Input.is_action_just_pressed("move_up"):
-		$Tween.interpolate_property($EngineActive,"volume_db",-80,-10,0.05,Tween.TRANS_LINEAR,Tween.EASE_IN)
-		$Tween.start()
-	if Input.is_action_just_released("move_up"):
-		var curVol = $EngineActive.volume_db
-		$Tween.interpolate_property($EngineActive,"volume_db",curVol,-80,0.05,Tween.TRANS_LINEAR,Tween.EASE_IN)
-		$Tween.start()
 	
 func moveShip():
+	
+	if Input.is_action_pressed("move_up"):
+		statemachine.travel("Accelerate")
+	elif Input.is_action_pressed("move_down"):
+		statemachine.travel("Deaccelerate")
+	else:
+		statemachine.travel("Idle")
 	var input_vector : Vector2
 	var accelerate := int(Input.get_action_strength("move_down") - Input.get_action_strength("move_up"))
 	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
@@ -51,25 +52,6 @@ func moveShip():
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, handling)
 	velocity = move_and_slide(velocity)
-	
-	#Engine exhaust power
-	var engines = $Engines.get_children()
-	#var tme = $Engines/left
-	var exhaustLifeTime : float
-	var exhaustVelocity : float
-	for engine in engines:
-		match accelerate:
-			-1:
-				exhaustLifeTime = origEngineLifetime * 0.8
-				exhaustVelocity = origEngineVelocity * 2
-			0:
-				exhaustLifeTime = origEngineLifetime
-				exhaustVelocity = origEngineVelocity
-			1:
-				exhaustLifeTime = origEngineLifetime * 1
-				exhaustVelocity = origEngineVelocity * 0.5
-		engine.lifetime = exhaustLifeTime
-		engine.process_material.set("initial_velocity", exhaustVelocity)
 
 func fireGuns():
 	if not rofTimer.is_stopped():

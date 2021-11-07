@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Entities/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Entities/Player/player.webp" type="Texture" id=2]
@@ -41,6 +41,287 @@ extents = Vector2( 33.6933, 24.8649 )
 
 [sub_resource type="CircleShape2D" id=8]
 radius = 23.1867
+
+[sub_resource type="Animation" id=9]
+resource_name = "Accelerate"
+length = 0.01
+loop = true
+step = 0.01
+tracks/0/type = "audio"
+tracks/0/path = NodePath("EngineActive")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"clips": [  ],
+"times": PoolRealArray(  )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EngineActive:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( -0.14 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("EngineActive:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Engines/right:lifetime")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Engines/left:lifetime")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Engines/left:speed_scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 8.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Engines/right:speed_scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 8.0 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "Deaccelerate"
+length = 0.01
+loop = true
+step = 0.01
+tracks/0/type = "audio"
+tracks/0/path = NodePath("EngineActive")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"clips": [  ],
+"times": PoolRealArray(  )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EngineActive:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( -0.14 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("EngineActive:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -30.0, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Engines/right:lifetime")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.2 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Engines/left:lifetime")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.2 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Engines/left:speed_scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Engines/right:speed_scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "Idle"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("EngineActive:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EngineActive:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -20.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Engines/left:lifetime")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.8 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Engines/left:speed_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 4.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Engines/right:lifetime")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.8 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Engines/right:speed_scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 4.0 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "Accelerate"
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "Deaccelerate"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+
+[sub_resource type="AnimationNodeStateMachine" id=11]
+states/Accelerate/node = SubResource( 13 )
+states/Accelerate/position = Vector2( 760, 142 )
+states/Deaccelerate/node = SubResource( 16 )
+states/Deaccelerate/position = Vector2( 639, 324 )
+states/Idle/node = SubResource( 14 )
+states/Idle/position = Vector2( 414, 242 )
+transitions = [ "Idle", "Accelerate", SubResource( 17 ), "Accelerate", "Idle", SubResource( 18 ), "Idle", "Deaccelerate", SubResource( 19 ), "Deaccelerate", "Idle", SubResource( 20 ) ]
+start_node = "Idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=12]
 
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
@@ -102,14 +383,24 @@ position = Vector2( 20, -28.59 )
 
 [node name="EngineActive" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -80.0
+volume_db = -20.0
 autoplay = true
 
 [node name="Gun" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 pitch_scale = 4.0
 
-[node name="Tween" type="Tween" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
+anims/Accelerate = SubResource( 9 )
+anims/Deaccelerate = SubResource( 15 )
+anims/Idle = SubResource( 10 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 11 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 12 )
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
 [connection signal="body_entered" from="Magnet" to="." method="_on_Magnet_body_entered"]
