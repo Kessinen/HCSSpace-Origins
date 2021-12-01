@@ -31,6 +31,7 @@ config/version="v0.9_alpha-30-g2a198be"
 playerStats="*res://Globals/playerStats.gd"
 GameFunctions="*res://Globals/gameFunctions.gd"
 MusicController="*res://Globals/musicController.tscn"
+statData="*res://Globals/statData.gd"
 
 [compression]
 

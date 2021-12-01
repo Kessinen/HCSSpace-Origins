@@ -1,16 +1,16 @@
 extends Control
 
-onready var playerHP = int(get_node("/root/playerStats").playerData["shipHP"])
-onready var playerMaxHP = int(get_node("/root/playerStats").upgradeMaxValues["HP"])
+var statsData = statData.stats
+
+onready var playerHP = statsData["armor"][str(get_node("/root/playerStats").playerData["armor"])]["hull"]
+onready var playerMaxHP = statsData["armor"][str(get_node("/root/playerStats").playerData["armor"])]["hull"]
 
 func _ready():
-	$CanvasLayer/MarginContainer/GridContainer/TextureProgress.max_value = int(range_lerp(playerHP,1,10,1,playerMaxHP))
-	$CanvasLayer/MarginContainer/GridContainer/TextureProgress.value = int(range_lerp(playerHP,1,10,1,playerMaxHP))
+	$CanvasLayer/MarginContainer/GridContainer/TextureProgress.max_value = playerMaxHP
+	$CanvasLayer/MarginContainer/GridContainer/TextureProgress.value = playerMaxHP
 	
-
 func _on_Player_lootChanged(newValue):
-	$CanvasLayer/MarginContainer/GridContainer/TextureRect3/lootAmount.text = String(newValue)
-
+	$CanvasLayer/MarginContainer/GridContainer/TextureRect3/lootAmount.text = str(newValue)
 
 func _on_Player_hpChanged(newValue):
 	$CanvasLayer/MarginContainer/GridContainer/TextureProgress.value = newValue

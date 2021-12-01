@@ -47,7 +47,3 @@ rotation = 1.5708
 shape = SubResource( 2 )
 
 [node name="Gui" parent="." instance=ExtResource( 2 )]
-
-[connection signal="IDied" from="Player" to="." method="_on_Player_IDied"]
-[connection signal="hpChanged" from="Player" to="Gui" method="_on_Player_hpChanged"]
-[connection signal="lootChanged" from="Player" to="Gui" method="_on_Player_lootChanged"]
