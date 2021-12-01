@@ -29,7 +29,7 @@ var upgradeCostMultiplier = {
 var upgradeMaxValues = {
 	"HP" : 50,
 	"Shields" : 1,
-	"RoF" : 0.2,
+	"RoF" : 0.1,
 	"Damage" : 20,
 	"Handling" : 100,
 	"Magnet" : 200,
